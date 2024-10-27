@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Declare GPU IDs for each set
 declare -a gpu_ids=(0 1 2 3 4)
 
@@ -30,7 +29,7 @@ urdf_version=${urdf_version_arr[0]} # Defaulting to None if not defined earlier
 policy_model="default_policy_model" # Ensure you set this to the correct value
 EXTRA_ARGS="--enable-raytracing --additional-env-build-kwargs station_name=mk_station_recolor light_mode=simple disable_bad_material=True urdf_version=${urdf_version} model_ids=baked_apple_v2"
 scene_name=evaluate_all_tasks
-
+ckpt_path="openvla/openvla-7b"
 # Define each set of environment names
 set_1=(
     "PutCarrotOnPlateInScene-v0"

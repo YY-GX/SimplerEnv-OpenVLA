@@ -1,7 +1,7 @@
 #!/bin/bash
 
 gpu_id=2
-declare -a arr=("openvla/openvla-7b")
+declare -a ckpt_paths=("openvla/openvla-7b")
 declare -a env_names=(
     PutCarrotOnPlateInScene-v0
     StackGreenCubeOnYellowCubeBakedTexInScene-v0
