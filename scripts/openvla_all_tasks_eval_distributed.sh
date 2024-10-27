@@ -93,7 +93,6 @@ set_5=(
 
 # Set 2
 (
-  EXTRA_ARGS="--enable-raytracing --additional-env-build-kwargs station_name=mk_station_recolor light_mode=simple disable_bad_material=True model_ids=baked_apple_v2"
   for env_name in "${set_2[@]}"; do
     overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a0.png" "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b0.png" "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c0.png")
     CUDA_VISIBLE_DEVICES=1 python simpler_env/main_inference.py --policy-model openvla --ckpt-path ${ckpt_path} \
@@ -102,8 +101,8 @@ set_5=(
     --env-name ${env_name} --scene-name dummy_drawer \
     --robot-init-x 0.644 0.644 1 --robot-init-y -0.179 -0.179 1 \
     --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 -0.03 -0.03 1 \
-    --obj-init-x-range -0.08 -0.02 3 --obj-init-y-range -0.02 0.08 3 \
-    ${EXTRA_ARGS} --additional-env-build-kwargs urdf_version="recolor_tabletop_visual_matching_1" --overlay_img_ls "${overlay_img_list[@]}";
+    --obj-init-x-range -0.08 -0.02 3 --obj-init-y-range -0.02 0.08 3 --enable-raytracing\
+    --additional-env-build-kwargs urdf_version="recolor_tabletop_visual_matching_1" station_name=mk_station_recolor light_mode=simple disable_bad_material=True model_ids=baked_apple_v2 --overlay_img_ls "${overlay_img_list[@]}";
   done
 ) &
 #
@@ -123,7 +122,6 @@ set_5=(
 #
 # Set 4
 #(
-#  EXTRA_ARGS="--enable-raytracing --additional-env-build-kwargs station_name=mk_station_recolor light_mode=simple disable_bad_material=True"
 #  for env_name in "${set_4[@]}"; do
 #    overlay_img_list=("rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a0.png"
 #                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a1.png"
@@ -140,8 +138,8 @@ set_5=(
 #    --env-name ${env_name} --scene-name dummy_drawer \
 #    --robot-init-x 0.644 0.644 1 --robot-init-y -0.179 -0.179 1 \
 #    --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 -0.03 -0.03 1 \
-#    --obj-init-x-range 0 0 1 --obj-init-y-range 0 0 1 \
-#    --additional-env-build-kwargs urdf_version=${urdf_version} ${EXTRA_ARGS} --overlay_img_ls "${overlay_img_list[@]}";
+#    --obj-init-x-range 0 0 1 --obj-init-y-range 0 0 1 --enable-raytracing \
+#    --additional-env-build-kwargs urdf_version=${urdf_version} station_name=mk_station_recolor light_mode=simple disable_bad_material=True --overlay_img_ls "${overlay_img_list[@]}";
 #  done
 #) &
 #
