@@ -189,17 +189,19 @@ def maniskill2_evaluator(model, args):
 
 
         if args.additional_env_save_tags is not None:
-            coke_can_option = random.choice(["lr_switch=True", "upright=True", "laid_vertically=True"])
-            option_key, option_value = coke_can_option.split("=")[0], coke_can_option.split("=")[1]
-
             additional_env_build_kwargs = {
-                option_key: option_value,
                 "urdf_version": random.choice([
                     None,
                     "recolor_tabletop_visual_matching_1", "recolor_tabletop_visual_matching_2",
                     "recolor_cabinet_visual_matching_1"
                 ])
             }
+
+            if "Coke" in args.env_name:
+                coke_can_option = random.choice(["lr_switch=True", "upright=True", "laid_vertically=True"])
+                option_key, option_value = coke_can_option.split("=")[0], coke_can_option.split("=")[1]
+                additional_env_build_kwargs[option_key] = option_value
+
             args.additional_env_build_kwargs = additional_env_build_kwargs
 
         (args.additional_env_build_kwargs)
