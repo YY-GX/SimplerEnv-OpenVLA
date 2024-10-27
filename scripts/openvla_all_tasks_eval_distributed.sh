@@ -27,7 +27,6 @@ declare -a coke_can_options_arr=("lr_switch=True" "upright=True" "laid_verticall
 declare -a urdf_version_arr=(None "recolor_tabletop_visual_matching_1" "recolor_tabletop_visual_matching_2" "recolor_cabinet_visual_matching_1")
 urdf_version=${urdf_version_arr[0]} # Defaulting to None if not defined earlier
 policy_model="openvla" # Ensure you set this to the correct value
-EXTRA_ARGS="--enable-raytracing --additional-env-build-kwargs station_name=mk_station_recolor light_mode=simple disable_bad_material=True urdf_version=${urdf_version} model_ids=baked_apple_v2"
 scene_name=evaluate_all_tasks
 ckpt_path="openvla/openvla-7b"
 # Define each set of environment names
@@ -62,50 +61,51 @@ set_5=(
 )
 
 
-# Start each set in parallel
-# Set 1
-(
-  for env_name in "${set_1[@]}"; do
-    if [[ "$env_name" == "PutEggplantInBasketScene-v0" ]]; then
-      robot=widowx_sink_camera_setup
-      robot_init_x=0.127
-      robot_init_y=0.06
-      overlay_img_list=("ManiSkill2_real2sim/data/real_inpainting/bridge_sink.png")
-      CUDA_VISIBLE_DEVICES=0 python simpler_env/main_inference.py --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
-      --robot ${robot} --policy-setup widowx_bridge \
-      --control-freq 5 --sim-freq 500 --max-episode-steps 120 \
-      --env-name ${env_name} --scene-name ${scene_name} \
-      --robot-init-x ${robot_init_x} ${robot_init_x} 1 --robot-init-y ${robot_init_y} ${robot_init_y} 1 --obj-variation-mode episode --obj-episode-range 0 24 \
-      --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 --overlay_img_ls "${overlay_img_list[@]}";
-    else
-      robot=widowx
-      robot_init_x=0.147
-      robot_init_y=0.028
-      overlay_img_list=("ManiSkill2_real2sim/data/real_inpainting/bridge_sink.png")
-      CUDA_VISIBLE_DEVICES=0 python simpler_env/main_inference.py --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
-      --robot ${robot} --policy-setup widowx_bridge \
-      --control-freq 5 --sim-freq 500 --max-episode-steps 60 \
-      --env-name ${env_name} --scene-name ${scene_name} \
-      --robot-init-x ${robot_init_x} ${robot_init_x} 1 --robot-init-y ${robot_init_y} ${robot_init_y} 1 --obj-variation-mode episode --obj-episode-range 0 24 \
-      --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 --overlay_img_ls "${overlay_img_list[@]}";
-    fi
-  done
-) &
-
-## Set 2
+## Start each set in parallel
+## Set 1
 #(
-#  for env_name in "${set_2[@]}"; do
-#    overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a0.png" "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b0.png" "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c0.png")
-#    CUDA_VISIBLE_DEVICES=1 python simpler_env/main_inference.py --policy-model openvla --ckpt-path ${ckpt_path} \
-#    --robot google_robot_static \
-#    --control-freq 3 --sim-freq 513 --max-episode-steps 200 \
-#    --env-name ${env_name} --scene-name dummy_drawer \
-#    --robot-init-x 0.644 0.644 1 --robot-init-y -0.179 -0.179 1 \
-#    --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 -0.03 -0.03 1 \
-#    --obj-init-x-range -0.08 -0.02 3 --obj-init-y-range -0.02 0.08 3 \
-#    ${EXTRA_ARGS} --overlay_img_ls "${overlay_img_list[@]}";
+#  for env_name in "${set_1[@]}"; do
+#    if [[ "$env_name" == "PutEggplantInBasketScene-v0" ]]; then
+#      robot=widowx_sink_camera_setup
+#      robot_init_x=0.127
+#      robot_init_y=0.06
+#      overlay_img_list=("ManiSkill2_real2sim/data/real_inpainting/bridge_sink.png")
+#      CUDA_VISIBLE_DEVICES=0 python simpler_env/main_inference.py --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
+#      --robot ${robot} --policy-setup widowx_bridge \
+#      --control-freq 5 --sim-freq 500 --max-episode-steps 120 \
+#      --env-name ${env_name} --scene-name ${scene_name} \
+#      --robot-init-x ${robot_init_x} ${robot_init_x} 1 --robot-init-y ${robot_init_y} ${robot_init_y} 1 --obj-variation-mode episode --obj-episode-range 0 24 \
+#      --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 --overlay_img_ls "${overlay_img_list[@]}";
+#    else
+#      robot=widowx
+#      robot_init_x=0.147
+#      robot_init_y=0.028
+#      overlay_img_list=("ManiSkill2_real2sim/data/real_inpainting/bridge_sink.png")
+#      CUDA_VISIBLE_DEVICES=0 python simpler_env/main_inference.py --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
+#      --robot ${robot} --policy-setup widowx_bridge \
+#      --control-freq 5 --sim-freq 500 --max-episode-steps 60 \
+#      --env-name ${env_name} --scene-name ${scene_name} \
+#      --robot-init-x ${robot_init_x} ${robot_init_x} 1 --robot-init-y ${robot_init_y} ${robot_init_y} 1 --obj-variation-mode episode --obj-episode-range 0 24 \
+#      --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 --overlay_img_ls "${overlay_img_list[@]}";
+#    fi
 #  done
 #) &
+
+# Set 2
+(
+  EXTRA_ARGS="--enable-raytracing --additional-env-build-kwargs station_name=mk_station_recolor light_mode=simple disable_bad_material=True urdf_version=${urdf_version} model_ids=baked_apple_v2"
+  for env_name in "${set_2[@]}"; do
+    overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a0.png" "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b0.png" "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c0.png")
+    CUDA_VISIBLE_DEVICES=1 python simpler_env/main_inference.py --policy-model openvla --ckpt-path ${ckpt_path} \
+    --robot google_robot_static \
+    --control-freq 3 --sim-freq 513 --max-episode-steps 200 \
+    --env-name ${env_name} --scene-name dummy_drawer \
+    --robot-init-x 0.644 0.644 1 --robot-init-y -0.179 -0.179 1 \
+    --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 -0.03 -0.03 1 \
+    --obj-init-x-range -0.08 -0.02 3 --obj-init-y-range -0.02 0.08 3 \
+    ${EXTRA_ARGS} --overlay_img_ls "${overlay_img_list[@]}";
+  done
+) &
 #
 ## Set 3
 #(
@@ -123,6 +123,7 @@ set_5=(
 #
 ## Set 4
 #(
+#  EXTRA_ARGS="--enable-raytracing --additional-env-build-kwargs station_name=mk_station_recolor light_mode=simple disable_bad_material=True urdf_version=${urdf_version}"
 #  for env_name in "${set_4[@]}"; do
 #    overlay_img_list=("rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a0.png"
 #                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a1.png"
