@@ -4,7 +4,7 @@ gpu_id=0
 declare -a arr=("openvla/openvla-7b")
 
 env_name=MoveNearGoogleBakedTexInScene-v0
-# env_name=MoveNearGoogleBakedTexInScene-v1
+#env_name=MoveNearGoogleBakedTexInScene-v1
 scene_name=google_pick_coke_can_1_v4
 rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/google_move_near_real_eval_1.png
 

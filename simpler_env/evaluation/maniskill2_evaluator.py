@@ -10,7 +10,8 @@ from transforms3d.euler import quat2euler
 from simpler_env.utils.env.env_builder import build_maniskill2_env, get_robot_control_mode
 from simpler_env.utils.env.observation_utils import get_image_from_maniskill2_obs_dict
 from simpler_env.utils.visualization import write_video
-
+import random
+import time
 
 def run_maniskill2_eval_single_episode(
     model,
@@ -176,44 +177,130 @@ def maniskill2_evaluator(model, args):
     control_mode = get_robot_control_mode(args.robot, args.policy_model)
     success_arr = []
 
-    # run inference
-    for robot_init_x in args.robot_init_xs:
-        for robot_init_y in args.robot_init_ys:
-            for robot_init_quat in args.robot_init_quats:
-                kwargs = dict(
-                    model=model,
-                    ckpt_path=args.ckpt_path,
-                    robot_name=args.robot,
-                    env_name=args.env_name,
-                    scene_name=args.scene_name,
-                    robot_init_x=robot_init_x,
-                    robot_init_y=robot_init_y,
-                    robot_init_quat=robot_init_quat,
-                    control_mode=control_mode,
-                    additional_env_build_kwargs=args.additional_env_build_kwargs,
-                    rgb_overlay_path=args.rgb_overlay_path,
-                    control_freq=args.control_freq,
-                    sim_freq=args.sim_freq,
-                    max_episode_steps=args.max_episode_steps,
-                    enable_raytracing=args.enable_raytracing,
-                    additional_env_save_tags=args.additional_env_save_tags,
-                    obs_camera_name=args.obs_camera_name,
-                    logging_dir=args.logging_dir,
+    # yy: I add this
+    if args.obj_variation_mode == "random_combination":
+        robot_init_x = random.choice(args.robot_init_xs)
+        robot_init_y = random.choice(args.robot_init_ys)
+        robot_init_quat = random.choice(args.robot_init_quats)
+        # randomly pick the overlay image
+        rgb_overlay_path = random.choice(args.overlay_img_ls)
+
+
+
+
+        if args.additional_env_save_tags is not None:
+            coke_can_option = random.choice(["lr_switch=True", "upright=True", "laid_vertically=True"])
+            option_key, option_value = coke_can_option.split("=")[0], coke_can_option.split("=")[1]
+
+            additional_env_build_kwargs = {
+                option_key: option_value,
+                "urdf_version": random.choice([
+                    None,
+                    "recolor_tabletop_visual_matching_1", "recolor_tabletop_visual_matching_2",
+                    "recolor_cabinet_visual_matching_1"
+                ])
+            }
+            args.additional_env_build_kwargs = additional_env_build_kwargs
+
+        (args.additional_env_build_kwargs)
+        kwargs = dict(
+            model=model,
+            ckpt_path=args.ckpt_path,
+            robot_name=args.robot,
+            env_name=args.env_name,
+            scene_name=args.scene_name,
+            robot_init_x=robot_init_x,
+            robot_init_y=robot_init_y,
+            robot_init_quat=robot_init_quat,
+            control_mode=control_mode,
+            additional_env_build_kwargs=args.additional_env_build_kwargs,
+            rgb_overlay_path=rgb_overlay_path,
+            control_freq=args.control_freq,
+            sim_freq=args.sim_freq,
+            max_episode_steps=args.max_episode_steps,
+            enable_raytracing=args.enable_raytracing,
+            additional_env_save_tags=args.additional_env_save_tags,
+            obs_camera_name=args.obs_camera_name,
+            logging_dir=args.logging_dir,
+        )
+        print("========================================")
+        print(f"[INFO] Evaluated Env Name: {args.env_name}")
+        t_start = time.time()
+        for traj_idx in range(args.eval_traj_num):
+            print(f"[INFO] Trajectory Index: {traj_idx}")
+            # For bridge
+            if args.env_name in [
+                "PutCarrotOnPlateInScene-v0",
+                "StackGreenCubeOnYellowCubeBakedTexInScene-v0",
+                "PutSpoonOnTableClothInScene-v0",
+                "PutEggplantInBasketScene-v0"
+            ]:
+                obj_episode_id = random.randint(args.obj_episode_range[0], args.obj_episode_range[1] - 1)
+                success_arr.append(run_maniskill2_eval_single_episode(obj_episode_id=obj_episode_id, **kwargs))
+            else:
+                obj_init_x = random.choice(args.obj_init_xs)
+                obj_init_y = random.choice(args.obj_init_ys)
+                success_arr.append(
+                    run_maniskill2_eval_single_episode(
+                        obj_init_x=obj_init_x,
+                        obj_init_y=obj_init_y,
+                        **kwargs,
+                    )
                 )
-                if args.obj_variation_mode == "xy":
-                    for obj_init_x in args.obj_init_xs:
-                        for obj_init_y in args.obj_init_ys:
-                            success_arr.append(
-                                run_maniskill2_eval_single_episode(
-                                    obj_init_x=obj_init_x,
-                                    obj_init_y=obj_init_y,
-                                    **kwargs,
+        t_end = time.time()
+        np.save(f"results/{args.scene_name}/SR_{args.env_name}.npy", success_arr)
+        succ_rate = np.sum(success_arr) / len(success_arr)
+        time_duration = t_end - t_start
+        # Convert to hours, minutes, and seconds
+        hours = time_duration // 3600
+        minutes = (time_duration % 3600) // 60
+        seconds = time_duration % 60
+        # Format the result
+        saved_str = f"Used Time for env {args.env_name}:\n {int(hours)} hours, {int(minutes)} minutes, {int(seconds)} seconds\n\n"
+        saved_str += f"Success Rate: {succ_rate}"
+        print(saved_str)
+        # Save to a text file
+        with open(f"results/{args.scene_name}/Results_{args.env_name}.txt", 'w') as file:
+            file.write(saved_str)
+    else:
+        # run inference
+        for robot_init_x in args.robot_init_xs:
+            for robot_init_y in args.robot_init_ys:
+                for robot_init_quat in args.robot_init_quats:
+                    kwargs = dict(
+                        model=model,
+                        ckpt_path=args.ckpt_path,
+                        robot_name=args.robot,
+                        env_name=args.env_name,
+                        scene_name=args.scene_name,
+                        robot_init_x=robot_init_x,
+                        robot_init_y=robot_init_y,
+                        robot_init_quat=robot_init_quat,
+                        control_mode=control_mode,
+                        additional_env_build_kwargs=args.additional_env_build_kwargs,
+                        rgb_overlay_path=args.rgb_overlay_path,
+                        control_freq=args.control_freq,
+                        sim_freq=args.sim_freq,
+                        max_episode_steps=args.max_episode_steps,
+                        enable_raytracing=args.enable_raytracing,
+                        additional_env_save_tags=args.additional_env_save_tags,
+                        obs_camera_name=args.obs_camera_name,
+                        logging_dir=args.logging_dir,
+                    )
+                    if args.obj_variation_mode == "xy":
+                        for obj_init_x in args.obj_init_xs:
+                            for obj_init_y in args.obj_init_ys:
+                                success_arr.append(
+                                    run_maniskill2_eval_single_episode(
+                                        obj_init_x=obj_init_x,
+                                        obj_init_y=obj_init_y,
+                                        **kwargs,
+                                    )
                                 )
-                            )
-                elif args.obj_variation_mode == "episode":
-                    for obj_episode_id in range(args.obj_episode_range[0], args.obj_episode_range[1]):
-                        success_arr.append(run_maniskill2_eval_single_episode(obj_episode_id=obj_episode_id, **kwargs))
-                else:
-                    raise NotImplementedError()
+                    elif args.obj_variation_mode == "episode":
+                        for obj_episode_id in range(args.obj_episode_range[0], args.obj_episode_range[1]):
+                            success_arr.append(run_maniskill2_eval_single_episode(obj_episode_id=obj_episode_id, **kwargs))
+                    else:
+                        raise NotImplementedError()
 
     return success_arr

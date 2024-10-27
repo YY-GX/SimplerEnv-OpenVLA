@@ -81,7 +81,7 @@ def get_args():
         "--obj-variation-mode",
         type=str,
         default="xy",
-        choices=["xy", "episode"],
+        choices=["xy", "episode", "random_combination"],
         help="Whether to vary the xy position of a single object, or to vary predetermined episodes",
     )
     parser.add_argument("--obj-episode-range", type=int, nargs=2, default=[0, 60], help="[start, end]")
@@ -113,6 +113,11 @@ def get_args():
     parser.add_argument("--logging-dir", type=str, default="./results")
     parser.add_argument("--tf-memory-limit", type=int, default=3072, help="Tensorflow memory limit")
     parser.add_argument("--octo-init-rng", type=int, default=0, help="Octo init rng seed")
+
+    # yy: added by me
+    parser.add_argument("--eval_traj_num", type=int, default=1, help="How many trajectories you want to evaluate")
+    parser.add_argument('--overlay_img_ls', nargs='+', help='List of overlay images')
+
 
     args = parser.parse_args()
 
