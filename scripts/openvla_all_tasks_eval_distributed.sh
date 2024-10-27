@@ -39,8 +39,8 @@ set_1=(
 
 set_2=(
     "PlaceIntoClosedTopDrawerCustomInScene-v0"
-#    "PlaceIntoClosedMiddleDrawerCustomInScene-v0"
-#    "PlaceIntoClosedBottomDrawerCustomInScene-v0"
+    "PlaceIntoClosedMiddleDrawerCustomInScene-v0"
+    "PlaceIntoClosedBottomDrawerCustomInScene-v0"
 )
 
 set_3=(
@@ -49,11 +49,11 @@ set_3=(
 
 set_4=(
     "OpenTopDrawerCustomInScene-v0"
-    "OpenMiddleDrawerCustomInScene-v0"
-    "OpenBottomDrawerCustomInScene-v0"
-    "CloseTopDrawerCustomInScene-v0"
-    "CloseMiddleDrawerCustomInScene-v0"
-    "CloseBottomDrawerCustomInScene-v0"
+#    "OpenMiddleDrawerCustomInScene-v0"
+#    "OpenBottomDrawerCustomInScene-v0"
+#    "CloseTopDrawerCustomInScene-v0"
+#    "CloseMiddleDrawerCustomInScene-v0"
+#    "CloseBottomDrawerCustomInScene-v0"
 )
 
 set_5=(
@@ -91,20 +91,20 @@ set_5=(
 #  done
 #) &
 #
-# Set 2
-(
-  for env_name in "${set_2[@]}"; do
-    overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a0.png" "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b0.png" "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c0.png")
-    CUDA_VISIBLE_DEVICES=1 python simpler_env/main_inference.py --policy-model openvla --ckpt-path ${ckpt_path} \
-    --robot google_robot_static \
-    --control-freq 3 --sim-freq 513 --max-episode-steps 200 \
-    --env-name ${env_name} --scene-name dummy_drawer \
-    --robot-init-x 0.644 0.644 1 --robot-init-y -0.179 -0.179 1 \
-    --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 -0.03 -0.03 1 \
-    --obj-init-x-range -0.08 -0.02 3 --obj-init-y-range -0.02 0.08 3 --enable-raytracing\
-    --additional-env-build-kwargs urdf_version="recolor_tabletop_visual_matching_1" station_name=mk_station_recolor light_mode=simple disable_bad_material=True model_ids=baked_apple_v2 --overlay_img_ls "${overlay_img_list[@]}";
-  done
-) &
+## Set 2
+#(
+#  for env_name in "${set_2[@]}"; do
+#    overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a0.png" "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b0.png" "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c0.png")
+#    CUDA_VISIBLE_DEVICES=1 python simpler_env/main_inference.py --policy-model openvla --ckpt-path ${ckpt_path} \
+#    --robot google_robot_static \
+#    --control-freq 3 --sim-freq 513 --max-episode-steps 200 \
+#    --env-name ${env_name} --scene-name dummy_drawer \
+#    --robot-init-x 0.644 0.644 1 --robot-init-y -0.179 -0.179 1 \
+#    --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 -0.03 -0.03 1 \
+#    --obj-init-x-range -0.08 -0.02 3 --obj-init-y-range -0.02 0.08 3 --enable-raytracing\
+#    --additional-env-build-kwargs urdf_version="recolor_tabletop_visual_matching_1" station_name=mk_station_recolor light_mode=simple disable_bad_material=True model_ids=baked_apple_v2 --overlay_img_ls "${overlay_img_list[@]}";
+#  done
+#) &
 #
 #
 ## Set 3
@@ -121,28 +121,28 @@ set_5=(
 #  done
 #) &
 #
-## Set 4
-#(
-#  for env_name in "${set_4[@]}"; do
-#    overlay_img_list=("rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a0.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a1.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a2.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b0.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b1.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b2.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c0.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c1.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c2.png")
-#    CUDA_VISIBLE_DEVICES=3 python simpler_env/main_inference.py --policy-model openvla --ckpt-path ${ckpt_path} \
-#    --robot google_robot_static \
-#    --control-freq 3 --sim-freq 513 --max-episode-steps 113 \
-#    --env-name ${env_name} --scene-name dummy_drawer \
-#    --robot-init-x 0.644 0.644 1 --robot-init-y -0.179 -0.179 1 \
-#    --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 -0.03 -0.03 1 \
-#    --obj-init-x-range 0 0 1 --obj-init-y-range 0 0 1 --enable-raytracing \
-#    --additional-env-build-kwargs urdf_version=${urdf_version} station_name=mk_station_recolor light_mode=simple disable_bad_material=True --overlay_img_ls "${overlay_img_list[@]}";
-#  done
-#) &
+# Set 4
+(
+  for env_name in "${set_4[@]}"; do
+    overlay_img_list=("rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a0.png"
+                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a1.png"
+                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a2.png"
+                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b0.png"
+                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b1.png"
+                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b2.png"
+                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c0.png"
+                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c1.png"
+                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c2.png")
+    CUDA_VISIBLE_DEVICES=3 python simpler_env/main_inference.py --policy-model openvla --ckpt-path ${ckpt_path} \
+    --robot google_robot_static \
+    --control-freq 3 --sim-freq 513 --max-episode-steps 113 \
+    --env-name ${env_name} --scene-name dummy_drawer \
+    --robot-init-x 0.644 0.644 1 --robot-init-y -0.179 -0.179 1 \
+    --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 -0.03 -0.03 1 \
+    --obj-init-x-range 0 0 1 --obj-init-y-range 0 0 1 --enable-raytracing \
+    --additional-env-build-kwargs urdf_version=${urdf_version} station_name=mk_station_recolor light_mode=simple disable_bad_material=True --overlay_img_ls "${overlay_img_list[@]}";
+  done
+) &
 #
 ## Set 5
 #(
