@@ -80,7 +80,7 @@ def get_args():
     parser.add_argument(
         "--obj-variation-mode",
         type=str,
-        default="xy",
+        default="random_combination",
         choices=["xy", "episode", "random_combination"],
         help="Whether to vary the xy position of a single object, or to vary predetermined episodes",
     )

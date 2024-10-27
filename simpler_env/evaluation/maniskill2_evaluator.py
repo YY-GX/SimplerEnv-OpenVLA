@@ -231,7 +231,8 @@ def maniskill2_evaluator(model, args):
                 "PutCarrotOnPlateInScene-v0",
                 "StackGreenCubeOnYellowCubeBakedTexInScene-v0",
                 "PutSpoonOnTableClothInScene-v0",
-                "PutEggplantInBasketScene-v0"
+                "PutEggplantInBasketScene-v0",
+                "MoveNearGoogleBakedTexInScene-v0"
             ]:
                 obj_episode_id = random.randint(args.obj_episode_range[0], args.obj_episode_range[1] - 1)
                 success_arr.append(run_maniskill2_eval_single_episode(obj_episode_id=obj_episode_id, **kwargs))
