@@ -130,7 +130,7 @@ def get_args():
             for y in parse_range_tuple(args.robot_init_rot_rpy_range[6:]):
                 args.robot_init_quats.append((Pose(q=euler2quat(r, p, y)) * Pose(q=args.robot_init_rot_quat_center)).q)
     # env args: object position
-    if args.obj_variation_mode == "xy":
+    if (args.obj_variation_mode == "xy") or (args.obj_variation_mode == "random_combination"):
         args.obj_init_xs = parse_range_tuple(args.obj_init_x_range)
         args.obj_init_ys = parse_range_tuple(args.obj_init_y_range)
     # update logging info (args.additional_env_save_tags) if using a different camera from default
