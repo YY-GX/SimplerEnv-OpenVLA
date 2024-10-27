@@ -245,21 +245,23 @@ def maniskill2_evaluator(model, args):
                         **kwargs,
                     )
                 )
-        t_end = time.time()
-        np.save(f"results/{args.scene_name}/SR_{args.env_name}.npy", success_arr)
-        succ_rate = np.sum(success_arr) / len(success_arr)
-        time_duration = t_end - t_start
-        # Convert to hours, minutes, and seconds
-        hours = time_duration // 3600
-        minutes = (time_duration % 3600) // 60
-        seconds = time_duration % 60
-        # Format the result
-        saved_str = f"Used Time for env {args.env_name}:\n {int(hours)} hours, {int(minutes)} minutes, {int(seconds)} seconds\n\n"
-        saved_str += f"Success Rate: {succ_rate}"
-        print(saved_str)
-        # Save to a text file
-        with open(f"results/{args.scene_name}/Results_{args.env_name}.txt", 'w') as file:
-            file.write(saved_str)
+
+            if ((traj_idx > 0) and (traj_idx % (args.eval_traj_num // 10) == 0)) or (traj_idx == args.eval_traj_num - 1):
+                t_end = time.time()
+                np.save(f"results/{args.scene_name}/SR_{args.env_name}.npy", success_arr)
+                succ_rate = np.sum(success_arr) / len(success_arr)
+                time_duration = t_end - t_start
+                # Convert to hours, minutes, and seconds
+                hours = time_duration // 3600
+                minutes = (time_duration % 3600) // 60
+                seconds = time_duration % 60
+                # Format the result
+                saved_str = f"Used Time for env {args.env_name}:\n {int(hours)} hours, {int(minutes)} minutes, {int(seconds)} seconds\n\n"
+                saved_str += f"Success Rate: {succ_rate}"
+                print(saved_str)
+                # Save to a text file
+                with open(f"results/{args.scene_name}/Results_{args.env_name}.txt", 'w') as file:
+                    file.write(saved_str)
     else:
         # run inference
         for robot_init_x in args.robot_init_xs:
