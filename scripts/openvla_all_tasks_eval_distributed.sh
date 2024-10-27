@@ -106,6 +106,7 @@ set_5=(
 #  done
 #) &
 #
+
 # Set 3
 (
   for env_name in "${set_3[@]}"; do
