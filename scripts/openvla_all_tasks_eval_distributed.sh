@@ -124,15 +124,15 @@ set_5=(
 ## Set 4
 #(
 #  for env_name in "${set_4[@]}"; do
-#    overlay_img_list=("rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a0.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a1.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a2.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b0.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b1.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b2.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c0.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c1.png"
-#                      "rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c2.png")
+#    overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a0.png"
+#                      "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a1.png"
+#                      "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_a2.png"
+#                      "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b0.png"
+#                      "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b1.png"
+#                      "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_b2.png"
+#                      "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c0.png"
+#                      "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c1.png"
+#                      "./ManiSkill2_real2sim/data/real_inpainting/open_drawer_c2.png")
 #    CUDA_VISIBLE_DEVICES=3 python simpler_env/main_inference.py --policy-model openvla --ckpt-path ${ckpt_path} \
 #    --robot google_robot_static \
 #    --control-freq 3 --sim-freq 513 --max-episode-steps 113 \
@@ -147,7 +147,7 @@ set_5=(
 # Set 5
 (
   for env_name in "${set_5[@]}"; do
-      overlay_img_list=("rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/google_move_near_real_eval_1.png")
+      overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/google_move_near_real_eval_1.png")
       CUDA_VISIBLE_DEVICES=4 python simpler_env/main_inference.py --policy-model openvla --ckpt-path ${ckpt_path} \
       --robot google_robot_static \
       --control-freq 3 --sim-freq 513 --max-episode-steps 80 \
