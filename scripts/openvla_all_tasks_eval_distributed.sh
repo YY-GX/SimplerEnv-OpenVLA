@@ -32,9 +32,9 @@ ckpt_path="openvla/openvla-7b"
 # Define each set of environment names
 set_1=(
     "PutCarrotOnPlateInScene-v0"
-#    "StackGreenCubeOnYellowCubeBakedTexInScene-v0"
-#    "PutSpoonOnTableClothInScene-v0"
-#    "PutEggplantInBasketScene-v0"
+    "StackGreenCubeOnYellowCubeBakedTexInScene-v0"
+    "PutSpoonOnTableClothInScene-v0"
+    "PutEggplantInBasketScene-v0"
 )
 
 set_2=(
@@ -62,34 +62,34 @@ set_5=(
 
 
 ## Start each set in parallel
-# Set 1
-(
-  for env_name in "${set_1[@]}"; do
-    if [[ "$env_name" == "PutEggplantInBasketScene-v0" ]]; then
-      robot=widowx_sink_camera_setup
-      robot_init_x=0.127
-      robot_init_y=0.06
-      overlay_img_list=("ManiSkill2_real2sim/data/real_inpainting/bridge_sink.png")
-      CUDA_VISIBLE_DEVICES=0 python simpler_env/main_inference.py --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
-      --robot ${robot} --policy-setup widowx_bridge \
-      --control-freq 5 --sim-freq 500 --max-episode-steps 120 \
-      --env-name ${env_name} --scene-name ${scene_name} \
-      --robot-init-x ${robot_init_x} ${robot_init_x} 1 --robot-init-y ${robot_init_y} ${robot_init_y} 1 --obj-episode-range 0 24 \
-      --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 --overlay_img_ls "${overlay_img_list[@]}";
-    else
-      robot=widowx
-      robot_init_x=0.147
-      robot_init_y=0.028
-      overlay_img_list=("ManiSkill2_real2sim/data/real_inpainting/bridge_sink.png")
-      CUDA_VISIBLE_DEVICES=0 python simpler_env/main_inference.py --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
-      --robot ${robot} --policy-setup widowx_bridge \
-      --control-freq 5 --sim-freq 500 --max-episode-steps 60 \
-      --env-name ${env_name} --scene-name ${scene_name} \
-      --robot-init-x ${robot_init_x} ${robot_init_x} 1 --robot-init-y ${robot_init_y} ${robot_init_y} 1 --obj-episode-range 0 24 \
-      --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 --overlay_img_ls "${overlay_img_list[@]}";
-    fi
-  done
-) &
+## Set 1
+#(
+#  for env_name in "${set_1[@]}"; do
+#    if [[ "$env_name" == "PutEggplantInBasketScene-v0" ]]; then
+#      robot=widowx_sink_camera_setup
+#      robot_init_x=0.127
+#      robot_init_y=0.06
+#      overlay_img_list=("ManiSkill2_real2sim/data/real_inpainting/bridge_sink.png")
+#      CUDA_VISIBLE_DEVICES=0 python simpler_env/main_inference.py --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
+#      --robot ${robot} --policy-setup widowx_bridge \
+#      --control-freq 5 --sim-freq 500 --max-episode-steps 120 \
+#      --env-name ${env_name} --scene-name ${scene_name} \
+#      --robot-init-x ${robot_init_x} ${robot_init_x} 1 --robot-init-y ${robot_init_y} ${robot_init_y} 1 --obj-episode-range 0 24 \
+#      --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 --overlay_img_ls "${overlay_img_list[@]}";
+#    else
+#      robot=widowx
+#      robot_init_x=0.147
+#      robot_init_y=0.028
+#      overlay_img_list=("ManiSkill2_real2sim/data/real_inpainting/bridge_sink.png")
+#      CUDA_VISIBLE_DEVICES=0 python simpler_env/main_inference.py --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
+#      --robot ${robot} --policy-setup widowx_bridge \
+#      --control-freq 5 --sim-freq 500 --max-episode-steps 60 \
+#      --env-name ${env_name} --scene-name ${scene_name} \
+#      --robot-init-x ${robot_init_x} ${robot_init_x} 1 --robot-init-y ${robot_init_y} ${robot_init_y} 1 --obj-episode-range 0 24 \
+#      --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 --overlay_img_ls "${overlay_img_list[@]}";
+#    fi
+#  done
+#) &
 #
 ## Set 2
 #(
@@ -107,19 +107,19 @@ set_5=(
 #) &
 #
 #
-## Set 3
-#(
-#  for env_name in "${set_3[@]}"; do
-#    overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/google_coke_can_real_eval_1.png")
-#    CUDA_VISIBLE_DEVICES=2 python simpler_env/main_inference.py --policy-model openvla --ckpt-path ${ckpt_path} \
-#    --robot google_robot_static \
-#    --control-freq 3 --sim-freq 513 --max-episode-steps 80 \
-#    --env-name ${env_name} --scene-name ${scene_name} \
-#    --robot-init-x 0.35 0.35 1 --robot-init-y 0.20 0.20 1 --obj-init-x -0.35 -0.12 5 --obj-init-y -0.02 0.42 5 \
-#    --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 \
-#    --additional-env-build-kwargs "${coke_can_options_arr[@]}" urdf_version=${urdf_version} --overlay_img_ls "${overlay_img_list[@]}";
-#  done
-#) &
+# Set 3
+(
+  for env_name in "${set_3[@]}"; do
+    overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/google_coke_can_real_eval_1.png")
+    CUDA_VISIBLE_DEVICES=2 python simpler_env/main_inference.py --policy-model openvla --ckpt-path ${ckpt_path} \
+    --robot google_robot_static \
+    --control-freq 3 --sim-freq 513 --max-episode-steps 80 \
+    --env-name ${env_name} --scene-name ${scene_name} \
+    --robot-init-x 0.35 0.35 1 --robot-init-y 0.20 0.20 1 --obj-init-x -0.35 -0.12 5 --obj-init-y -0.02 0.42 5 \
+    --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 \
+    --additional-env-build-kwargs "${coke_can_options_arr[@]}" urdf_version=${urdf_version} --overlay_img_ls "${overlay_img_list[@]}";
+  done
+) &
 #
 ## Set 4
 #(
