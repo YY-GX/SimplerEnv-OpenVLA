@@ -249,6 +249,7 @@ def maniskill2_evaluator(model, args):
 
             if ((traj_idx > 0) and (traj_idx % (args.eval_traj_num // 10) == 0)) or (traj_idx == args.eval_traj_num - 1):
                 t_end = time.time()
+                os.makedirs(f"results/{args.scene_name}/", exist_ok=True)
                 np.save(f"results/{args.scene_name}/SR_{args.env_name}.npy", success_arr)
                 succ_rate = np.sum(success_arr) / len(success_arr)
                 time_duration = t_end - t_start
