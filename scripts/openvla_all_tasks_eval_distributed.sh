@@ -26,7 +26,7 @@ declare -a env_names=(
 declare -a coke_can_options_arr=("lr_switch=True" "upright=True" "laid_vertically=True")
 declare -a urdf_version_arr=(None "recolor_tabletop_visual_matching_1" "recolor_tabletop_visual_matching_2" "recolor_cabinet_visual_matching_1")
 urdf_version=${urdf_version_arr[0]} # Defaulting to None if not defined earlier
-policy_model="default_policy_model" # Ensure you set this to the correct value
+policy_model="openvla" # Ensure you set this to the correct value
 EXTRA_ARGS="--enable-raytracing --additional-env-build-kwargs station_name=mk_station_recolor light_mode=simple disable_bad_material=True urdf_version=${urdf_version} model_ids=baked_apple_v2"
 scene_name=evaluate_all_tasks
 ckpt_path="openvla/openvla-7b"
