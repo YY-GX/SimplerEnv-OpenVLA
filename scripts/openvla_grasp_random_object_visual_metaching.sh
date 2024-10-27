@@ -10,7 +10,9 @@ declare -a coke_can_options_arr=("lr_switch=True" "upright=True" "laid_verticall
 # URDF variations
 declare -a urdf_version_arr=(None "recolor_tabletop_visual_matching_1" "recolor_tabletop_visual_matching_2" "recolor_cabinet_visual_matching_1")
 
-env_name=GraspSingleOpenedCokeCanInScene-v0
+#env_name=GraspSingleOpenedCokeCanInScene-v0
+#scene_name=google_pick_coke_can_1_v4
+env_name=GraspSingleRandomObjectInScene-v0
 scene_name=google_pick_coke_can_1_v4
 rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/google_coke_can_real_eval_1.png
 
