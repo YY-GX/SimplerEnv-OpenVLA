@@ -37,6 +37,7 @@ def run_maniskill2_eval_single_episode(
     additional_env_save_tags=None,
     logging_dir="./results",
     traj_idx=0,
+    obj_variation_mode=None
 ):
 
     if additional_env_build_kwargs is None:
@@ -251,6 +252,7 @@ def maniskill2_evaluator(model, args):
             additional_env_save_tags=args.additional_env_save_tags,
             obs_camera_name=args.obs_camera_name,
             logging_dir=args.logging_dir,
+            obj_variation_mode="random_combination"
         )
         print("========================================")
         print(f"[INFO] Evaluated Env Name: {args.env_name}")
