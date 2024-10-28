@@ -36,6 +36,7 @@ def run_maniskill2_eval_single_episode(
     enable_raytracing=False,
     additional_env_save_tags=None,
     logging_dir="./results",
+    traj_idx=0,
 ):
 
     if additional_env_build_kwargs is None:
@@ -71,18 +72,38 @@ def run_maniskill2_eval_single_episode(
             "init_rot_quat": robot_init_quat,
         }
     }
-    if obj_init_x is not None:
-        assert obj_init_y is not None
-        obj_variation_mode = "xy"
-        env_reset_options["obj_init_options"] = {
-            "init_xy": np.array([obj_init_x, obj_init_y]),
-        }
+
+
+
+
+    if obj_variation_mode == "random_combination":
+        if obj_init_x is not None:
+            assert obj_init_y is not None
+            env_reset_options["obj_init_options"] = {
+                "init_xy": np.array([obj_init_x, obj_init_y]),
+            }
+        else:
+            assert obj_episode_id is not None
+            env_reset_options["obj_init_options"] = {
+                "episode_id": obj_episode_id,
+            }
     else:
-        assert obj_episode_id is not None
-        obj_variation_mode = "episode"
-        env_reset_options["obj_init_options"] = {
-            "episode_id": obj_episode_id,
-        }
+        if obj_init_x is not None:
+            assert obj_init_y is not None
+            obj_variation_mode = "xy"
+            env_reset_options["obj_init_options"] = {
+                "init_xy": np.array([obj_init_x, obj_init_y]),
+            }
+        else:
+            assert obj_episode_id is not None
+            obj_variation_mode = "episode"
+            env_reset_options["obj_init_options"] = {
+                "episode_id": obj_episode_id,
+            }
+
+
+
+
     obs, _ = env.reset(options=env_reset_options)
     # for long-horizon environments, we check if the current subtask is the final subtask
     is_final_subtask = env.is_final_subtask() 
@@ -147,20 +168,33 @@ def run_maniskill2_eval_single_episode(
         env_save_name = env_save_name + f"_{additional_env_save_tags}"
     ckpt_path_basename = ckpt_path if ckpt_path[-1] != "/" else ckpt_path[:-1]
     ckpt_path_basename = ckpt_path_basename.split("/")[-1]
-    if obj_variation_mode == "xy":
-        video_name = f"{success}_obj_{obj_init_x}_{obj_init_y}"
-    elif obj_variation_mode == "episode":
-        video_name = f"{success}_obj_episode_{obj_episode_id}"
-    for k, v in episode_stats.items():
-        video_name = video_name + f"_{k}_{v}"
-    video_name = video_name + ".mp4"
     if rgb_overlay_path is not None:
         rgb_overlay_path_str = os.path.splitext(os.path.basename(rgb_overlay_path))[0]
     else:
         rgb_overlay_path_str = "None"
     r, p, y = quat2euler(robot_init_quat)
-    video_path = f"{ckpt_path_basename}/{scene_name}/{control_mode}/{env_save_name}/rob_{robot_init_x}_{robot_init_y}_rot_{r:.3f}_{p:.3f}_{y:.3f}_rgb_overlay_{rgb_overlay_path_str}/{video_name}"
-    video_path = os.path.join(logging_dir, video_path)
+
+
+
+    if obj_variation_mode == "random_combination":
+        video_name = f"{success}_traj_{traj_idx}.mp4"
+        video_path = f"{ckpt_path_basename}/{scene_name}/{env_name}/{video_name}"
+        video_path = os.path.join(logging_dir, video_path)
+    else:
+        if obj_variation_mode == "xy":
+            video_name = f"{success}_obj_{obj_init_x}_{obj_init_y}"
+        elif obj_variation_mode == "episode":
+            video_name = f"{success}_obj_episode_{obj_episode_id}"
+
+        for k, v in episode_stats.items():
+            video_name = video_name + f"_{k}_{v}"
+        video_name = video_name + ".mp4"
+        video_path = f"{ckpt_path_basename}/{scene_name}/{control_mode}/{env_save_name}/rob_{robot_init_x}_{robot_init_y}_rot_{r:.3f}_{p:.3f}_{y:.3f}_rgb_overlay_{rgb_overlay_path_str}/{video_name}"
+        video_path = os.path.join(logging_dir, video_path)
+
+
+
+
     write_video(video_path, images, fps=5)
 
     # save action trajectory
@@ -185,9 +219,6 @@ def maniskill2_evaluator(model, args):
         # randomly pick the overlay image
         rgb_overlay_path = random.choice(args.overlay_img_ls)
 
-
-
-
         if args.additional_env_save_tags is not None:
             args.additional_env_build_kwargs["urdf_version"] = random.choice([
                     None,
@@ -197,7 +228,7 @@ def maniskill2_evaluator(model, args):
 
             if "Coke" in args.env_name:
                 coke_can_option = random.choice(["lr_switch=True", "upright=True", "laid_vertically=True"])
-                option_key, option_value = coke_can_option.split("=")[0], coke_can_option.split("=")[1]
+                option_key, option_value = coke_can_option.split("=")[0], coke_can_option.split("=")[1] == "True"
                 args.additional_env_build_kwargs[option_key] = option_value
 
         (args.additional_env_build_kwargs)
@@ -235,7 +266,7 @@ def maniskill2_evaluator(model, args):
                 "MoveNearGoogleBakedTexInScene-v0"
             ]:
                 obj_episode_id = random.randint(args.obj_episode_range[0], args.obj_episode_range[1] - 1)
-                success_arr.append(run_maniskill2_eval_single_episode(obj_episode_id=obj_episode_id, **kwargs))
+                success_arr.append(run_maniskill2_eval_single_episode(obj_episode_id=obj_episode_id, traj_idx=traj_idx, **kwargs))
             else:
                 obj_init_x = random.choice(args.obj_init_xs)
                 obj_init_y = random.choice(args.obj_init_ys)
@@ -243,14 +274,18 @@ def maniskill2_evaluator(model, args):
                     run_maniskill2_eval_single_episode(
                         obj_init_x=obj_init_x,
                         obj_init_y=obj_init_y,
+                        traj_idx=traj_idx,
                         **kwargs,
                     )
                 )
 
             if ((traj_idx > 0) and (traj_idx % (args.eval_traj_num // 10) == 0)) or (traj_idx == args.eval_traj_num - 1):
                 t_end = time.time()
-                os.makedirs(f"results/{args.scene_name}/", exist_ok=True)
-                np.save(f"results/{args.scene_name}/SR_{args.env_name}.npy", success_arr)
+                ckpt_path_basename = args.ckpt_path if args.ckpt_path[-1] != "/" else args.ckpt_path[:-1]
+                ckpt_path_basename = ckpt_path_basename.split("/")[-1]
+                save_folder = f"{ckpt_path_basename}/{scene_name}/{env_name}/{video_name}"
+                os.makedirs(f"results/{save_folder}/", exist_ok=True)
+                np.save(f"results/{save_folder}/SR_{args.env_name}.npy", success_arr)
                 succ_rate = np.sum(success_arr) / len(success_arr)
                 time_duration = t_end - t_start
                 # Convert to hours, minutes, and seconds
@@ -262,8 +297,24 @@ def maniskill2_evaluator(model, args):
                 saved_str += f"Success Rate: {succ_rate}"
                 print(saved_str)
                 # Save to a text file
-                with open(f"results/{args.scene_name}/Results_{args.env_name}.txt", 'w') as file:
+                with open(f"results/{save_folder}/Results_{args.env_name}.txt", 'w') as file:
                     file.write(saved_str)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     else:
         # run inference
         for robot_init_x in args.robot_init_xs:
