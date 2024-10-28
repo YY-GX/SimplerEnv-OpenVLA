@@ -37,7 +37,8 @@ def run_maniskill2_eval_single_episode(
     additional_env_save_tags=None,
     logging_dir="./results",
     traj_idx=0,
-    obj_variation_mode=None
+    obj_variation_mode=None,
+    my_folder="evaluate_all_tasks"
 ):
 
     if additional_env_build_kwargs is None:
@@ -179,7 +180,7 @@ def run_maniskill2_eval_single_episode(
 
     if obj_variation_mode == "random_combination":
         video_name = f"{success}_traj_{traj_idx}.mp4"
-        video_path = f"{ckpt_path_basename}/{scene_name}/{env_name}/{video_name}"
+        video_path = f"{ckpt_path_basename}/{my_folder}/{scene_name}/{env_name}/{video_name}"
         video_path = os.path.join(logging_dir, video_path)
     else:
         if obj_variation_mode == "xy":
@@ -252,7 +253,8 @@ def maniskill2_evaluator(model, args):
             additional_env_save_tags=args.additional_env_save_tags,
             obs_camera_name=args.obs_camera_name,
             logging_dir=args.logging_dir,
-            obj_variation_mode="random_combination"
+            obj_variation_mode="random_combination",
+            my_folder=args.my_folder
         )
         print("========================================")
         print(f"[INFO] Evaluated Env Name: {args.env_name}")
@@ -281,11 +283,11 @@ def maniskill2_evaluator(model, args):
                     )
                 )
 
-            if ((traj_idx > 0) and (traj_idx % (args.eval_traj_num // 10) == 0)) or (traj_idx == args.eval_traj_num - 1):
+            if ((traj_idx > 0) and (traj_idx % 10 == 0)) or (traj_idx == args.eval_traj_num - 1):
                 t_end = time.time()
                 ckpt_path_basename = args.ckpt_path if args.ckpt_path[-1] != "/" else args.ckpt_path[:-1]
                 ckpt_path_basename = ckpt_path_basename.split("/")[-1]
-                save_folder = f"{ckpt_path_basename}/{scene_name}/{env_name}/{video_name}"
+                save_folder = f"{ckpt_path_basename}/{args.my_folder}/{scene_name}/{env_name}/{video_name}"
                 os.makedirs(f"results/{save_folder}/", exist_ok=True)
                 np.save(f"results/{save_folder}/SR_{args.env_name}.npy", success_arr)
                 succ_rate = np.sum(success_arr) / len(success_arr)
