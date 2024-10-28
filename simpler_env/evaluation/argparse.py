@@ -115,7 +115,7 @@ def get_args():
     parser.add_argument("--octo-init-rng", type=int, default=0, help="Octo init rng seed")
 
     # yy: added by me
-    parser.add_argument("--eval_traj_num", type=int, default=2, help="How many trajectories you want to evaluate")
+    parser.add_argument("--eval_traj_num", type=int, default=20, help="How many trajectories you want to evaluate")
     parser.add_argument('--overlay_img_ls', nargs='+', help='List of overlay images')
     parser.add_argument("--my_folder", type=str, default="evaluate_all_tasks")
 
