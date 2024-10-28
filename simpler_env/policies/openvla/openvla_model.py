@@ -39,7 +39,7 @@ class OpenVLAInference:
         self.processor = AutoProcessor.from_pretrained(saved_model_path, trust_remote_code=True)
         self.vla = AutoModelForVision2Seq.from_pretrained(
             # TODO: yy: change this to your checkpoint path
-            "openvla/openvla-7b",
+            saved_model_path,
             attn_implementation="flash_attention_2",  # [Optional] Requires `flash_attn`
             torch_dtype=torch.bfloat16,
             low_cpu_mem_usage=True,
@@ -60,6 +60,8 @@ class OpenVLAInference:
         self.task = None
         self.task_description = None
         self.num_image_history = 0
+
+        print(f">> Saved_model_path: {saved_model_path}")
 
     def reset(self, task_description: str) -> None:
         self.task_description = task_description

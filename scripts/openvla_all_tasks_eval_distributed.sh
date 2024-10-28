@@ -3,24 +3,24 @@
 declare -a gpu_ids=(0 1 2 3 4)
 
 # Declare environment names
-declare -a arr=("openvla/openvla-7b")
-declare -a env_names=(
-    PutCarrotOnPlateInScene-v0
-    StackGreenCubeOnYellowCubeBakedTexInScene-v0
-    PutSpoonOnTableClothInScene-v0
-    PutEggplantInBasketScene-v0
-    PlaceIntoClosedTopDrawerCustomInScene-v0
-    PlaceIntoClosedMiddleDrawerCustomInScene-v0
-    PlaceIntoClosedBottomDrawerCustomInScene-v0
-    GraspSingleOpenedCokeCanInScene-v0
-    OpenTopDrawerCustomInScene-v0
-    OpenMiddleDrawerCustomInScene-v0
-    OpenBottomDrawerCustomInScene-v0
-    CloseTopDrawerCustomInScene-v0
-    CloseMiddleDrawerCustomInScene-v0
-    CloseBottomDrawerCustomInScene-v0
-    MoveNearGoogleBakedTexInScene-v0
-)
+#declare -a arr=("openvla/openvla-7b")
+#declare -a env_names=(
+#    PutCarrotOnPlateInScene-v0
+#    StackGreenCubeOnYellowCubeBakedTexInScene-v0
+#    PutSpoonOnTableClothInScene-v0
+#    PutEggplantInBasketScene-v0
+#    PlaceIntoClosedTopDrawerCustomInScene-v0
+#    PlaceIntoClosedMiddleDrawerCustomInScene-v0
+#    PlaceIntoClosedBottomDrawerCustomInScene-v0
+#    GraspSingleOpenedCokeCanInScene-v0
+#    OpenTopDrawerCustomInScene-v0
+#    OpenMiddleDrawerCustomInScene-v0
+#    OpenBottomDrawerCustomInScene-v0
+#    CloseTopDrawerCustomInScene-v0
+#    CloseMiddleDrawerCustomInScene-v0
+#    CloseBottomDrawerCustomInScene-v0
+#    MoveNearGoogleBakedTexInScene-v0
+#)
 
 # Declare additional variables
 declare -a coke_can_options_arr=("lr_switch=True" "upright=True" "laid_vertically=True")
