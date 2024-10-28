@@ -287,7 +287,7 @@ def maniskill2_evaluator(model, args):
                 t_end = time.time()
                 ckpt_path_basename = args.ckpt_path if args.ckpt_path[-1] != "/" else args.ckpt_path[:-1]
                 ckpt_path_basename = ckpt_path_basename.split("/")[-1]
-                save_folder = f"{ckpt_path_basename}/{args.my_folder}/{scene_name}/{env_name}/{video_name}"
+                save_folder = f"{ckpt_path_basename}/{args.my_folder}/{args.scene_name}/{args.env_name}/"
                 os.makedirs(f"results/{save_folder}/", exist_ok=True)
                 np.save(f"results/{save_folder}/SR_{args.env_name}.npy", success_arr)
                 succ_rate = np.sum(success_arr) / len(success_arr)
