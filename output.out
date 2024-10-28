@@ -1,0 +1,250 @@
+2024-10-28 13:04:56.219536: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-10-28 13:04:56.219641: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-10-28 13:04:56.219880: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-10-28 13:04:56.219958: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-10-28 13:04:56.219933: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-10-28 13:04:56.220024: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-10-28 13:04:56.220023: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-10-28 13:04:56.220117: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-10-28 13:04:56.220761: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-10-28 13:04:56.221123: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-10-28 13:04:56.221175: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-10-28 13:04:56.221242: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-10-28 13:04:56.226309: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-10-28 13:04:56.226385: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-10-28 13:04:56.227048: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-10-28 13:04:56.227475: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-10-28 13:04:56.227528: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-10-28 13:04:56.227558: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-10-28 13:04:56.227898: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-10-28 13:04:56.235066: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-10-28 13:04:57.376247: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-10-28 13:04:57.376256: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-10-28 13:04:57.376281: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-10-28 13:04:57.376284: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-10-28 13:04:57.376286: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+Expected `transformers==4.40.1` and `tokenizers==0.19.1` but got `transformers==4.40.1` and `tokenizers==0.19.0`; there might be inference-time regressions due to dependency changes. If in doubt, pleaseuse the above versions.
+Expected `transformers==4.40.1` and `tokenizers==0.19.1` but got `transformers==4.40.1` and `tokenizers==0.19.0`; there might be inference-time regressions due to dependency changes. If in doubt, pleaseuse the above versions.
+Expected `transformers==4.40.1` and `tokenizers==0.19.1` but got `transformers==4.40.1` and `tokenizers==0.19.0`; there might be inference-time regressions due to dependency changes. If in doubt, pleaseuse the above versions.
+Expected `transformers==4.40.1` and `tokenizers==0.19.1` but got `transformers==4.40.1` and `tokenizers==0.19.0`; there might be inference-time regressions due to dependency changes. If in doubt, pleaseuse the above versions.
+Expected `transformers==4.40.1` and `tokenizers==0.19.1` but got `transformers==4.40.1` and `tokenizers==0.19.0`; there might be inference-time regressions due to dependency changes. If in doubt, pleaseuse the above versions.
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Octo is not correctly imported.
+No module named 'octo'
+**** openvla ****
+*** policy_setup: google_robot, unnorm_key: fractal20220817_data ***
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.99it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:00<00:00,  2.60it/s]Octo is not correctly imported.
+No module named 'octo'
+**** openvla ****
+*** policy_setup: google_robot, unnorm_key: fractal20220817_data ***
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  2.46it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  2.42it/s]
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Octo is not correctly imported.
+No module named 'octo'
+**** openvla ****
+*** policy_setup: google_robot, unnorm_key: fractal20220817_data ***
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Octo is not correctly imported.
+No module named 'octo'
+**** openvla ****
+*** policy_setup: google_robot, unnorm_key: fractal20220817_data ***
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Octo is not correctly imported.
+No module named 'octo'
+**** openvla ****
+*** policy_setup: widowx_bridge, unnorm_key: bridge_orig ***
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:00,  2.48it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:00,  2.57it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:00<00:00,  3.15it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:00,  2.62it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:00,  2.54it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:00<00:00,  3.09it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00,  3.51it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00,  3.31it/s]
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:00<00:00,  3.21it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:00<00:00,  3.11it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00,  3.33it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00,  3.19it/s]
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00,  3.48it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00,  3.32it/s]
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00,  3.33it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00,  3.19it/s]
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2024-10-28 13:05:30.246] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:05:30.246] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:05:32.633] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:05:32.633] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:05:32.816] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:05:32.817] [svulkan2] [warning] Continue without GLFW.
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/envs/registration.py:513: DeprecationWarning: [33mWARN: The environment MoveNearGoogleBakedTexInScene-v0 is out of date. You should consider upgrading to version `v1`.[0m
+  logger.deprecation(
+[2024-10-28 13:05:32.819] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:05:32.819] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:05:32.825] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:05:32.825] [svulkan2] [warning] Continue without GLFW.
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.is_final_subtask to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.is_final_subtask` for environment variables or `env.get_wrapper_attr('is_final_subtask')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.get_language_instruction to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.get_language_instruction` for environment variables or `env.get_wrapper_attr('get_language_instruction')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.robot_uid to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.robot_uid` for environment variables or `env.get_wrapper_attr('robot_uid')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.is_final_subtask to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.is_final_subtask` for environment variables or `env.get_wrapper_attr('is_final_subtask')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.get_language_instruction to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.get_language_instruction` for environment variables or `env.get_wrapper_attr('get_language_instruction')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.robot_uid to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.robot_uid` for environment variables or `env.get_wrapper_attr('robot_uid')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.is_final_subtask to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.is_final_subtask` for environment variables or `env.get_wrapper_attr('is_final_subtask')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.get_language_instruction to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.get_language_instruction` for environment variables or `env.get_wrapper_attr('get_language_instruction')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.robot_uid to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.robot_uid` for environment variables or `env.get_wrapper_attr('robot_uid')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.is_final_subtask to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.is_final_subtask` for environment variables or `env.get_wrapper_attr('is_final_subtask')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.get_language_instruction to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.get_language_instruction` for environment variables or `env.get_wrapper_attr('get_language_instruction')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.robot_uid to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.robot_uid` for environment variables or `env.get_wrapper_attr('robot_uid')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.is_final_subtask to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.is_final_subtask` for environment variables or `env.get_wrapper_attr('is_final_subtask')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.get_language_instruction to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.get_language_instruction` for environment variables or `env.get_wrapper_attr('get_language_instruction')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.robot_uid to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.robot_uid` for environment variables or `env.get_wrapper_attr('robot_uid')` that will search the reminding wrappers.[0m
+  logger.warn(
+[2024-10-28 13:06:40.336] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:06:40.336] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:06:58.900] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:06:58.900] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:07:03.214] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:07:03.214] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:07:43.303] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:07:43.303] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:07:45.157] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:07:45.158] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:08:27.839] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:08:27.839] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:08:31.026] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:08:31.026] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:08:48.119] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:08:48.119] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:09:21.034] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:09:21.034] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:09:54.236] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:09:54.236] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:09:55.516] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:09:55.516] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:09:55.576] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:09:55.576] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:09:57.707] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:09:57.707] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:10:58.286] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:10:58.286] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:11:28.346] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:11:28.346] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:11:28.417] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:11:28.417] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:12:01.688] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:12:01.688] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:12:12.550] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:12:12.550] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:12:57.651] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:12:57.651] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:13:00.095] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:13:00.095] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:13:06.596] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:13:06.596] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:13:07.837] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:13:07.837] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:14:16.964] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:14:16.964] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:14:23.257] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:14:23.257] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:14:25.868] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:14:25.868] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:14:26.788] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:14:26.788] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:15:21.436] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:15:21.436] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:15:56.194] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:15:56.194] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:15:57.016] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:15:57.016] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:16:26.685] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:16:26.685] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:16:43.006] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:16:43.006] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:16:49.993] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:16:49.993] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:17:21.286] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:17:21.286] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:17:23.344] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:17:23.344] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:17:27.701] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:17:27.701] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:18:34.912] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:18:34.912] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:18:48.447] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:18:48.447] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:18:50.835] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:18:50.835] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:18:52.611] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:18:52.611] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:19:43.023] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:19:43.023] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:20:20.684] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:20:20.684] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:20:26.653] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:20:26.653] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:20:31.651] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:20:31.651] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:20:51.267] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:20:51.267] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:21:13.796] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:21:13.796] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:21:49.141] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:21:49.141] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:21:56.877] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:21:56.877] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:21:56.997] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:21:56.997] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:23:04.448] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:23:04.448] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:23:20.520] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:23:20.520] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:23:28.179] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:23:28.179] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:23:28.633] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:23:28.633] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:24:12.188] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:24:12.188] [svulkan2] [warning] Continue without GLFW.
+[2024-10-28 13:24:20.777] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-10-28 13:24:20.777] [svulkan2] [warning] Continue without GLFW.
