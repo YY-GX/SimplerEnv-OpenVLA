@@ -230,7 +230,8 @@ def maniskill2_evaluator(model, args):
 
             if "Coke" in args.env_name:
                 coke_can_option = random.choice(["lr_switch=True", "upright=True", "laid_vertically=True"])
-                coke_can_option = "upright=True"
+                coke_can_option = random.choice(["upright=True", "laid_vertically=True"])
+                # coke_can_option = "upright=True"
                 option_key, option_value = coke_can_option.split("=")[0], coke_can_option.split("=")[1] == "True"
                 args.additional_env_build_kwargs[option_key] = option_value
 
