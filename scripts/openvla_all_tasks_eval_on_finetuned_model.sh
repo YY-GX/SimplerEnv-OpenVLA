@@ -27,7 +27,8 @@ declare -a coke_can_options_arr=("lr_switch=True" "upright=True" "laid_verticall
 declare -a urdf_version_arr=(None "recolor_tabletop_visual_matching_1" "recolor_tabletop_visual_matching_2" "recolor_cabinet_visual_matching_1")
 urdf_version=${urdf_version_arr[0]} # Defaulting to None if not defined earlier
 policy_model="openvla" # Ensure you set this to the correct value
-ckpt_path="/mnt/bum/yufang/projects/openvla/runs/coke/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0"
+#ckpt_path="/mnt/bum/yufang/projects/openvla/runs/coke/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0"
+ckpt_path="/mnt/bum/yufang/projects/openvla/runs/coke-long/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug/step2000"
 # Define each set of environment names
 set_1=(
     "PutCarrotOnPlateInScene-v0"
