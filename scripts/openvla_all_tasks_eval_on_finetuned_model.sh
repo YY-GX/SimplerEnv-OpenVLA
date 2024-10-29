@@ -28,11 +28,12 @@ declare -a urdf_version_arr=(None "recolor_tabletop_visual_matching_1" "recolor_
 urdf_version=${urdf_version_arr[0]} # Defaulting to None if not defined earlier
 policy_model="openvla" # Ensure you set this to the correct value
 #@Yu: ckpt_path is where you wanna to replace
+ckpt_path="openvla/openvla-7b"
 #ckpt_path="/mnt/bum/yufang/projects/openvla/runs/coke/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0"
 #ckpt_path="/mnt/bum/yufang/projects/openvla/runs/coke-long/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug/step2000"
 #ckpt_path="/mnt/bum/yufang/projects/openvla/runs/coke-long/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0/step2000"
 #ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--1000_chkpt"
-ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--1000_chkpt"
+#ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--1000_chkpt"
 
 # Define each set of environment names
 set_1=(
@@ -120,9 +121,9 @@ set_5=(
   for env_name in "${set_3[@]}"; do
     overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/google_coke_can_real_eval_1.png")
 #    @Yu: gpu id: CUDA_VISIBLE_DEVICES=3
-    CUDA_VISIBLE_DEVICES=3 python simpler_env/main_inference.py --my_folder "evaluate_on_finetuned_models" --policy-model openvla --ckpt-path ${ckpt_path} \
+    CUDA_VISIBLE_DEVICES=1 python simpler_env/main_inference.py --my_folder "evaluate_on_finetuned_models" --policy-model openvla --ckpt-path ${ckpt_path} \
     --robot google_robot_static \
-    --control-freq 3 --sim-freq 513 --max-episode-steps 80 \
+    --control-freq 3 --sim-freq 513 --max-episode-steps 120 \
     --env-name ${env_name} --scene-name ${scene_name} \
     --robot-init-x 0.35 0.35 1 --robot-init-y 0.20 0.20 1 --obj-init-x -0.35 -0.12 5 --obj-init-y -0.02 0.42 5 \
     --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 \
