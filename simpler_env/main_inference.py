@@ -51,9 +51,6 @@ def set_random_seed(seed):
     print(f"Random seed set to {seed} for all relevant libraries.")
 
 
-# Example usage
-set_random_seed(42)
-
 if __name__ == "__main__":
     args = get_args()
 
