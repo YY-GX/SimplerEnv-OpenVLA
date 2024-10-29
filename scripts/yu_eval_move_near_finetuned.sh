@@ -23,7 +23,7 @@ scene_name=google_pick_coke_can_1_v4
 for seed in "${seeds[@]}"; do
   for env_name in "${set_5[@]}"; do
       overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/google_move_near_real_eval_1.png")
-      CUDA_VISIBLE_DEVICES=2 python simpler_env/main_inference.py --my_folder "evaluate_on_finetuned_openvla" --policy-model openvla --ckpt-path ${ckpt_path} \
+      CUDA_VISIBLE_DEVICES=${gpu_id} python simpler_env/main_inference.py --my_folder "evaluate_on_finetuned_openvla" --policy-model openvla --ckpt-path ${ckpt_path} \
       --robot google_robot_static \
       --control-freq 3 --sim-freq 513 --max-episode-steps 120 \
       --env-name ${env_name} --scene-name ${scene_name} \
