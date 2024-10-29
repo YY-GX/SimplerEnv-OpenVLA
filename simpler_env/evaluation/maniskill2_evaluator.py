@@ -38,7 +38,8 @@ def run_maniskill2_eval_single_episode(
     logging_dir="./results",
     traj_idx=0,
     obj_variation_mode=None,
-    my_folder="evaluate_all_tasks"
+    my_folder="evaluate_all_tasks",
+    seed=0
 ):
 
     if additional_env_build_kwargs is None:
@@ -180,7 +181,7 @@ def run_maniskill2_eval_single_episode(
 
     if obj_variation_mode == "random_combination":
         video_name = f"{success}_traj_{traj_idx}.mp4"
-        video_path = f"{ckpt_path_basename}/{my_folder}/{scene_name}/{env_name}/{video_name}"
+        video_path = f"{my_folder}/{ckpt_path_basename}/{scene_name}/{env_name}/seed_{seed}/{video_name}"
         video_path = os.path.join(logging_dir, video_path)
     else:
         if obj_variation_mode == "xy":
@@ -254,7 +255,8 @@ def maniskill2_evaluator(model, args):
             obs_camera_name=args.obs_camera_name,
             logging_dir=args.logging_dir,
             obj_variation_mode="random_combination",
-            my_folder=args.my_folder
+            my_folder=args.my_folder,
+            seed=args.seed
         )
         print("========================================")
         print(f"[INFO] Evaluated Env Name: {args.env_name}")
