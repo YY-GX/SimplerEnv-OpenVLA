@@ -19,6 +19,7 @@ set_3=(
 )
 seeds=(0 1 2 3 4)
 
+scene_name=google_pick_coke_can_1_v4
 for seed in "${seeds[@]}"; do
   for env_name in "${set_3[@]}"; do
     overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/google_coke_can_real_eval_1.png")
