@@ -31,8 +31,8 @@ policy_model="openvla" # Ensure you set this to the correct value
 #ckpt_path="/mnt/bum/yufang/projects/openvla/runs/coke/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0"
 #ckpt_path="/mnt/bum/yufang/projects/openvla/runs/coke-long/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug/step2000"
 #ckpt_path="/mnt/bum/yufang/projects/openvla/runs/coke-long/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0/step2000"
-#ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--3000_chkpt"
-ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--3000_chkpt"
+ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--1000_chkpt"
+#ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--1000_chkpt"
 # Define each set of environment names
 set_1=(
     "PutCarrotOnPlateInScene-v0"
@@ -119,7 +119,7 @@ set_5=(
   for env_name in "${set_3[@]}"; do
     overlay_img_list=("./ManiSkill2_real2sim/data/real_inpainting/google_coke_can_real_eval_1.png")
 #    @Yu: gpu id: CUDA_VISIBLE_DEVICES=3
-    CUDA_VISIBLE_DEVICES=3 python simpler_env/main_inference.py --my_folder "evaluate_on_finetuned_models" --policy-model openvla --ckpt-path ${ckpt_path} \
+    CUDA_VISIBLE_DEVICES=2 python simpler_env/main_inference.py --my_folder "evaluate_on_finetuned_models" --policy-model openvla --ckpt-path ${ckpt_path} \
     --robot google_robot_static \
     --control-freq 3 --sim-freq 513 --max-episode-steps 80 \
     --env-name ${env_name} --scene-name ${scene_name} \
