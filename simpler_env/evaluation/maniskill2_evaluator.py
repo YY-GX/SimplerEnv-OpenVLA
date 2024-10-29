@@ -230,7 +230,7 @@ def maniskill2_evaluator(model, args):
 
             if "Coke" in args.env_name:
                 coke_can_option = random.choice(["lr_switch=True", "upright=True", "laid_vertically=True"])
-                coke_can_option = random.choice(["upright=True", "laid_vertically=True"])
+                # coke_can_option = random.choice(["upright=True", "laid_vertically=True"])
                 # coke_can_option = "upright=True"
                 option_key, option_value = coke_can_option.split("=")[0], coke_can_option.split("=")[1] == "True"
                 args.additional_env_build_kwargs[option_key] = option_value
@@ -289,7 +289,7 @@ def maniskill2_evaluator(model, args):
                 t_end = time.time()
                 ckpt_path_basename = args.ckpt_path if args.ckpt_path[-1] != "/" else args.ckpt_path[:-1]
                 ckpt_path_basename = ckpt_path_basename.split("/")[-1]
-                save_folder = f"{args.my_folder}/{ckpt_path_basename}/{args.scene_name}/{args.env_name}/"
+                save_folder = f"{args.my_folder}/{ckpt_path_basename}/{args.scene_name}/{args.env_name}/seed_{args.seed}/"
                 os.makedirs(f"results/{save_folder}/", exist_ok=True)
                 np.save(f"results/{save_folder}/SR_{args.env_name}.npy", success_arr)
                 succ_rate = np.sum(success_arr) / len(success_arr)

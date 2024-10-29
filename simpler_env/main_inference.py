@@ -8,6 +8,11 @@ from simpler_env.evaluation.maniskill2_evaluator import maniskill2_evaluator
 from simpler_env.policies.octo.octo_server_model import OctoServerInference
 from simpler_env.policies.rt1.rt1_model import RT1Inference
 from simpler_env.policies.openvla.openvla_model import OpenVLAInference
+import random
+import numpy as np
+import torch
+import tensorflow as tf
+
 
 try:
     from simpler_env.policies.octo.octo_model import OctoInference
@@ -15,6 +20,39 @@ except ImportError as e:
     print("Octo is not correctly imported.")
     print(e)
 
+
+
+def set_random_seed(seed):
+    """
+    Set the random seed for reproducibility across different libraries.
+
+    Args:
+        seed (int): The seed value to set for randomness.
+    """
+    # Set seed for Python's built-in random module
+    random.seed(seed)
+
+    # Set seed for NumPy
+    np.random.seed(seed)
+
+    # Set seed for PyTorch
+    torch.manual_seed(seed)  # CPU
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)  # GPU
+        torch.cuda.manual_seed_all(seed)  # All GPUs
+
+    # Set seed for TensorFlow
+    tf.random.set_seed(seed)
+
+    # # Optionally, you can set additional flags for PyTorch if needed
+    # torch.backends.cudnn.deterministic = True
+    # torch.backends.cudnn.benchmark = False
+
+    print(f"Random seed set to {seed} for all relevant libraries.")
+
+
+# Example usage
+set_random_seed(42)
 
 if __name__ == "__main__":
     args = get_args()
@@ -30,6 +68,10 @@ if __name__ == "__main__":
             [tf.config.LogicalDeviceConfiguration(memory_limit=args.tf_memory_limit)],
         )
     print(f"**** {args.policy_model} ****")
+
+    # set random seed - added by yy
+    set_random_seed(args.seed)
+
     # policy model creation; update this if you are using a new policy model
     if args.policy_model == "rt1":
         assert args.ckpt_path is not None
