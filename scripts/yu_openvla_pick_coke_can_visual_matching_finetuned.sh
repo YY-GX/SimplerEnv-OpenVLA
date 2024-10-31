@@ -1,8 +1,8 @@
 
 
-gpu_id=0
+gpu_id=3
 
-declare -a arr=("openvla/openvla-7b")
+declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--1000_chkpt" "/mnt/bum/yufang/projects/openvla/runs/1.0.3-v2/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--4000_chkpt")
 
 # lr_switch=laying horizontally but flipped left-right to match real eval; upright=standing; laid_vertically=laying vertically
 declare -a coke_can_options_arr=("lr_switch=True" "upright=True" "laid_vertically=True")

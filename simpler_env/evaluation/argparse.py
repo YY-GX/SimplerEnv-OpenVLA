@@ -77,10 +77,11 @@ def get_args():
         default=[0, 0, 1, 0, 0, 1, 0, 0, 1],
         help="[rmin, rmax, rnum, pmin, pmax, pnum, ymin, ymax, ynum]",
     )
+    # yy: remember to set this arg
     parser.add_argument(
         "--obj-variation-mode",
         type=str,
-        default="random_combination",
+        default="xy",
         choices=["xy", "episode", "random_combination"],
         help="Whether to vary the xy position of a single object, or to vary predetermined episodes",
     )
