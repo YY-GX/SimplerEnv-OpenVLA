@@ -224,9 +224,9 @@ def maniskill2_evaluator(model, args):
         print('>> YY smart')
         print(f">> {args.additional_env_save_tags}")
         print(f">> {args.env_name}")
-        if args.additional_env_save_tags is not None:
+        if args.additional_env_build_kwargs is not None:
             args.additional_env_build_kwargs["urdf_version"] = random.choice([
-                    None,
+                    # None,
                     "recolor_tabletop_visual_matching_1", "recolor_tabletop_visual_matching_2",
                     "recolor_cabinet_visual_matching_1"
                 ])
