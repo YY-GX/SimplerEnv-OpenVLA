@@ -18,7 +18,7 @@ set_1=(
     "PutCarrotOnPlateInScene-v0"
     "StackGreenCubeOnYellowCubeBakedTexInScene-v0"
     "PutSpoonOnTableClothInScene-v0"
-    "PutEggplantInBasketScene-v0"
+#    "PutEggplantInBasketScene-v0"
 )
 seeds=(0 1 2 3 4)
 
