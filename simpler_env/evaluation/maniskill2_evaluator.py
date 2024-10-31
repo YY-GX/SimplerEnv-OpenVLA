@@ -221,8 +221,8 @@ def maniskill2_evaluator(model, args):
         robot_init_quat = random.choice(args.robot_init_quats)
         # randomly pick the overlay image
         rgb_overlay_path = random.choice(args.overlay_img_ls)
-        print('>> YY smart')
-        print(f">> {args.additional_env_save_tags}")
+        # print('>> YY smart')
+        print(f">> {args.additional_env_build_kwargs}")
         print(f">> {args.env_name}")
         if args.additional_env_build_kwargs is not None:
             args.additional_env_build_kwargs["urdf_version"] = random.choice([
@@ -234,11 +234,11 @@ def maniskill2_evaluator(model, args):
             if "Coke" in args.env_name:
                 coke_can_option = random.choice(["lr_switch=True", "upright=True", "laid_vertically=True"])
                 print(f"coke_can_option: {coke_can_option}")
-                exit(0)
+                # exit(0)
                 option_key, option_value = coke_can_option.split("=")[0], coke_can_option.split("=")[1] == "True"
                 args.additional_env_build_kwargs[option_key] = option_value
 
-        exit(0)
+        # exit(0)
         (args.additional_env_build_kwargs)
         kwargs = dict(
             model=model,
