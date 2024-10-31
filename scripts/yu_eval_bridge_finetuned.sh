@@ -32,7 +32,7 @@ for seed in "${seeds[@]}"; do
       robot_init_x=0.127
       robot_init_y=0.06
       overlay_img_list=("ManiSkill2_real2sim/data/real_inpainting/bridge_sink.png")
-      CUDA_VISIBLE_DEVICES=${gpu_id} python simpler_env/main_inference.py --my_folder "evaluate_on_finetuned_openvla" --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
+      CUDA_VISIBLE_DEVICES=${gpu_id} python simpler_env/main_inference.py --my_folder "evaluate_on_finetuned_openvla_carrot" --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
       --robot ${robot} --policy-setup widowx_bridge \
       --control-freq 5 --sim-freq 500 --max-episode-steps 120 \
       --env-name ${env_name} --scene-name ${scene_name} \
@@ -44,7 +44,7 @@ for seed in "${seeds[@]}"; do
       robot_init_x=0.147
       robot_init_y=0.028
       overlay_img_list=("ManiSkill2_real2sim/data/real_inpainting/bridge_sink.png")
-      CUDA_VISIBLE_DEVICES=${gpu_id} python simpler_env/main_inference.py --my_folder "evaluate_on_finetuned_openvla" --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
+      CUDA_VISIBLE_DEVICES=${gpu_id} python simpler_env/main_inference.py --my_folder "evaluate_on_finetuned_openvla_carrot" --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
       --robot ${robot} --policy-setup widowx_bridge \
       --control-freq 5 --sim-freq 500 --max-episode-steps 120 \
       --env-name ${env_name} --scene-name ${scene_name} \
