@@ -1,0 +1,4 @@
+Used Time for env PlaceIntoClosedMiddleDrawerCustomInScene-v0:
+ 7 hours, 26 minutes, 24 seconds
+
+Success Rate: 0.0

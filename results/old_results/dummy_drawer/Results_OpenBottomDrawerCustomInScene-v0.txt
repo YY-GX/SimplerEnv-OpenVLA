@@ -1,4 +1,0 @@
-Used Time for env OpenBottomDrawerCustomInScene-v0:
- 5 hours, 9 minutes, 42 seconds
-
-Success Rate: 1.0

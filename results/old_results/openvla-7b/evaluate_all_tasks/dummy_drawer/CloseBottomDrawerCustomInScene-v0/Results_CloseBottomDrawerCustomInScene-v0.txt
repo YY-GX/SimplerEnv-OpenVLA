@@ -1,4 +1,0 @@
-Used Time for env CloseBottomDrawerCustomInScene-v0:
- 1 hours, 11 minutes, 12 seconds
-
-Success Rate: 0.0

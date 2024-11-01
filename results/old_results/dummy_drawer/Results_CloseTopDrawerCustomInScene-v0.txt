@@ -1,4 +1,0 @@
-Used Time for env CloseTopDrawerCustomInScene-v0:
- 0 hours, 33 minutes, 12 seconds
-
-Success Rate: 1.0

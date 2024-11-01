@@ -1,4 +1,0 @@
-Used Time for env PlaceIntoClosedTopDrawerCustomInScene-v0:
- 1 hours, 25 minutes, 28 seconds
-
-Success Rate: 0.0

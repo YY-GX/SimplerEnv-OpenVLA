@@ -1,0 +1,4 @@
+Used Time for env PutSpoonOnTableClothInScene-v0:
+ 0 hours, 25 minutes, 9 seconds
+
+Success Rate: 0.0

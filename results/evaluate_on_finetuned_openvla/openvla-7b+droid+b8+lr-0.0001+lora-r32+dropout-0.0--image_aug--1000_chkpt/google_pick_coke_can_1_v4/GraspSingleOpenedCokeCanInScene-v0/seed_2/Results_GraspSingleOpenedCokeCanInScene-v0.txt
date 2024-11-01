@@ -1,4 +1,0 @@
-Used Time for env GraspSingleOpenedCokeCanInScene-v0:
- 1 hours, 27 minutes, 8 seconds
-
-Success Rate: 0.35

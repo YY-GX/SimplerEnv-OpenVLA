@@ -1,4 +1,0 @@
-Used Time for env StackGreenCubeOnYellowCubeBakedTexInScene-v0:
- 2 hours, 57 minutes, 16 seconds
-
-Success Rate: 0.0

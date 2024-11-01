@@ -1,0 +1,4 @@
+Used Time for env MoveNearGoogleBakedTexInScene-v0:
+ 0 hours, 29 minutes, 43 seconds
+
+Success Rate: 0.45

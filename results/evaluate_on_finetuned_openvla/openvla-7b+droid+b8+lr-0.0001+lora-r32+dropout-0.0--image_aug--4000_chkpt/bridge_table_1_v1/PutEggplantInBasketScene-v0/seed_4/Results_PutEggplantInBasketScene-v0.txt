@@ -1,4 +1,0 @@
-Used Time for env PutEggplantInBasketScene-v0:
- 0 hours, 22 minutes, 36 seconds
-
-Success Rate: 0.0

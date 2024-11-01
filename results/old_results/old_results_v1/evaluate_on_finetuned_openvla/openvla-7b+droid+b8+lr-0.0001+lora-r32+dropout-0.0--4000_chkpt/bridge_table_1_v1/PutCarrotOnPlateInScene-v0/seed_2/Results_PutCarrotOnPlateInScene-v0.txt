@@ -1,0 +1,4 @@
+Used Time for env PutCarrotOnPlateInScene-v0:
+ 0 hours, 34 minutes, 31 seconds
+
+Success Rate: 0.0

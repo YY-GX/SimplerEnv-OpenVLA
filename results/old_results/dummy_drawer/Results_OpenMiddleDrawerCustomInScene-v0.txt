@@ -1,4 +1,0 @@
-Used Time for env OpenMiddleDrawerCustomInScene-v0:
- 5 hours, 33 minutes, 41 seconds
-
-Success Rate: 0.0
