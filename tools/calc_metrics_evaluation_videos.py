@@ -908,7 +908,14 @@ def calc_bridge_put_on_env_stats(root_result_dir):
             "openvla-1000-img-aug": 0.88,
             "openvla-4000-img-aug": 0.88,
         },
-        "put_carrot_on_plate": {"rt-1-x": 0.00, "octo-base": 0.25, "octo-small": 0.083},
+        "put_carrot_on_plate": {
+            "rt-1-x": 0.00,
+            "octo-base": 0.25,
+            "octo-small": 0.083,
+            "openvla-7b": 0.10,
+            "openvla-1000-img-aug": 0.88,
+            "openvla-4000-img-aug": 0.88,
+        },
         "stack_green_block_on_yellow_block": {
             "rt-1-x": 0.000,
             "octo-base": 0.000,
