@@ -120,6 +120,7 @@ def get_args():
     parser.add_argument('--overlay_img_ls', nargs='+', help='List of overlay images')
     parser.add_argument("--my_folder", type=str, default="evaluate_all_tasks")
     parser.add_argument("--seed", type=int, default=0, help="random seed")
+    parser.add_argument("--instruction", type=str, default=None, help="language description")
 
 
     args = parser.parse_args()

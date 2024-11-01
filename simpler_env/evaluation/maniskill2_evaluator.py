@@ -149,10 +149,11 @@ def run_maniskill2_eval_single_episode(
         )
         
         success = "success" if done else "failure"
-        new_task_description = env.get_language_instruction()
-        if new_task_description != task_description:
-            task_description = new_task_description
-            print(task_description)
+        # yy: I comment the following lines to use param instruction
+        # new_task_description = env.get_language_instruction()
+        # if new_task_description != task_description:
+        #     task_description = new_task_description
+        #     print(task_description)
         is_final_subtask = env.is_final_subtask()
 
         print(timestep, info)
@@ -193,6 +194,10 @@ def run_maniskill2_eval_single_episode(
             video_name = video_name + f"_{k}_{v}"
         video_name = video_name + ".mp4"
         video_path = f"{ckpt_path_basename}/{scene_name}/{control_mode}/{env_save_name}/rob_{robot_init_x}_{robot_init_y}_rot_{r:.3f}_{p:.3f}_{y:.3f}_rgb_overlay_{rgb_overlay_path_str}/{video_name}"
+        if instruction is not None:
+            instruction_prefix = "_".join(instruction.split(" "))
+            video_path = f"{ckpt_path_basename}/{scene_name}/{control_mode}/{env_save_name}/{instruction_prefix}_rob_{robot_init_x}_{robot_init_y}_rot_{r:.3f}_{p:.3f}_{y:.3f}_rgb_overlay_{rgb_overlay_path_str}/{video_name}"
+
         video_path = os.path.join(logging_dir, video_path)
 
 
@@ -213,6 +218,8 @@ def run_maniskill2_eval_single_episode(
 def maniskill2_evaluator(model, args):
     control_mode = get_robot_control_mode(args.robot, args.policy_model)
     success_arr = []
+
+
 
     # yy: I add this
     if args.obj_variation_mode == "random_combination":
@@ -350,6 +357,7 @@ def maniskill2_evaluator(model, args):
                         additional_env_save_tags=args.additional_env_save_tags,
                         obs_camera_name=args.obs_camera_name,
                         logging_dir=args.logging_dir,
+                        instruction=args.instruction
                     )
                     if args.obj_variation_mode == "xy":
                         for obj_init_x in args.obj_init_xs:
