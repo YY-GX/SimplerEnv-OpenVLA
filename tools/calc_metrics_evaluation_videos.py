@@ -1004,8 +1004,8 @@ def calc_bridge_put_on_env_stats(root_result_dir):
                 base_visual_matching_variants = tmp
             for variant in base_visual_matching_variants:
                 variant = f"{root_result_dir}/{CKPT_MAPPING[ckpt_alias]}/{variant}"
-                print(f">> yy: {variant}")
-                print(f">> yy: {extra_pattern_require_visual_matching[task]}")
+                # print(f">> yy: {variant}")
+                # print(f">> yy: {extra_pattern_require_visual_matching[task]}")
                 avg_sim_success = np.mean(
                     get_dir_stats(
                         variant,
@@ -1013,7 +1013,7 @@ def calc_bridge_put_on_env_stats(root_result_dir):
                         succ_fail_pattern=succ_fail_pattern,
                     )
                 )
-                print(f">> yy: {avg_sim_success}")
+                # print(f">> yy: {avg_sim_success}")
                 avg_sim_partial_success = np.mean(
                     get_dir_stats(
                         variant,
