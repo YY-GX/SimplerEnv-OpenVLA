@@ -1,12 +1,12 @@
-gpu_id=4
+gpu_id=5
 policy_model=openvla
 ckpt_path="openvla/openvla-7b"
 
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--1000_chkpt" "/mnt/bum/yufang/projects/openvla/runs/1.0.3-v2/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--4000_chkpt")
 
 #carrot
-declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.0/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--20000_chkpt")
-#declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.0/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--20000_chkpt")
+#declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.0/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--20000_chkpt")
+declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.0/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--20000_chkpt")
 ##spoon
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.1/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--20000_chkpt")
 
