@@ -10,7 +10,6 @@ declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.0.4/openvla-7b+droid+b8
 ##spoon
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.0.5/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--1000_chkpt")
 
-
 scene_name=bridge_table_1_v1
 robot=widowx
 rgb_overlay_path=ManiSkill2_real2sim/data/real_inpainting/bridge_real_eval_1.png
