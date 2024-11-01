@@ -1,4 +1,4 @@
-gpu_id=4
+gpu_id=5
 policy_model=openvla
 ckpt_path="openvla/openvla-7b"
 
@@ -15,6 +15,8 @@ robot=widowx
 rgb_overlay_path=ManiSkill2_real2sim/data/real_inpainting/bridge_real_eval_1.png
 robot_init_x=0.147
 robot_init_y=0.028
+
+
 
 #yy: add for loop ckpt
 for ckpt_path in "${arr[@]}"; do
@@ -42,6 +44,7 @@ for ckpt_path in "${arr[@]}"; do
     --robot-init-x ${robot_init_x} ${robot_init_x} 1 --robot-init-y ${robot_init_y} ${robot_init_y} 1 --obj-variation-mode episode --obj-episode-range 0 24 \
     --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 --instruction "Pick up the spoon and place it on the towel";
 done
+
 
 
 # yy: comment eggplant
