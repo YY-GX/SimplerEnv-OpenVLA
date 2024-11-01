@@ -195,8 +195,9 @@ def run_maniskill2_eval_single_episode(
         video_name = video_name + ".mp4"
         video_path = f"{ckpt_path_basename}/{scene_name}/{control_mode}/{env_save_name}/rob_{robot_init_x}_{robot_init_y}_rot_{r:.3f}_{p:.3f}_{y:.3f}_rgb_overlay_{rgb_overlay_path_str}/{video_name}"
         if instruction is not None:
+            seed_prefix = f"seed_{seed}"
             instruction_prefix = "_".join(instruction.split(" "))
-            video_path = f"{ckpt_path_basename}/{scene_name}/{control_mode}/{env_save_name}/{instruction_prefix}_rob_{robot_init_x}_{robot_init_y}_rot_{r:.3f}_{p:.3f}_{y:.3f}_rgb_overlay_{rgb_overlay_path_str}/{video_name}"
+            video_path = f"{ckpt_path_basename}/{scene_name}/{control_mode}/{env_save_name}/{seed_prefix}_{instruction_prefix}_rob_{robot_init_x}_{robot_init_y}_rot_{r:.3f}_{p:.3f}_{y:.3f}_rgb_overlay_{rgb_overlay_path_str}/{video_name}"
 
         video_path = os.path.join(logging_dir, video_path)
 
@@ -357,7 +358,8 @@ def maniskill2_evaluator(model, args):
                         additional_env_save_tags=args.additional_env_save_tags,
                         obs_camera_name=args.obs_camera_name,
                         logging_dir=args.logging_dir,
-                        instruction=args.instruction
+                        instruction=args.instruction,
+                        seed=args.seed
                     )
                     if args.obj_variation_mode == "xy":
                         for obj_init_x in args.obj_init_xs:
