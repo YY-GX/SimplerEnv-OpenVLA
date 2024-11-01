@@ -28,6 +28,8 @@ def calc_pick_coke_can_stats(root_result_dir):
             "rt-1-begin": 0.20,
             "octo-base": 0.44,
             "openvla-7b": 0.64,
+            "openvla-1000-img-aug": 0.88,
+            "openvla-4000-img-aug": 0.88,
         },
         "vertical": {
             "rt-2-x": 0.80,
@@ -37,6 +39,8 @@ def calc_pick_coke_can_stats(root_result_dir):
             "rt-1-begin": 0.00,
             "octo-base": 0.20,
             "openvla-7b": 0.28,
+            "openvla-1000-img-aug": 0.88,
+            "openvla-4000-img-aug": 0.88,
         },
         "standing": {
             "rt-2-x": 1.00,
@@ -46,6 +50,8 @@ def calc_pick_coke_can_stats(root_result_dir):
             "rt-1-begin": 0.20,
             "octo-base": 0.24,
             "openvla-7b": 0.36,
+            "openvla-1000-img-aug": 0.88,
+            "openvla-4000-img-aug": 0.88,
         },
     }
 
@@ -286,6 +292,8 @@ def calc_move_near_stats(root_result_dir):
         "rt-1-begin": 0.017,
         "octo-base": 0.35,
         "openvla-7b": 0.667,
+        "openvla-1000-img-aug": 0.88,
+        "openvla-4000-img-aug": 0.88,
     }
 
     ckpt_alias_keys = list(move_near_real_success.keys())
@@ -863,24 +871,32 @@ def calc_bridge_put_on_env_stats(root_result_dir):
             "octo-base": 0.500,
             "octo-small": 0.542,
             "openvla-7b": 0.10,
+            "openvla-1000-img-aug": 0.88,
+            "openvla-4000-img-aug": 0.88,
         },
         "put_carrot_on_plate": {
             "rt-1-x": 0.167,
             "octo-base": 0.500,
             "octo-small": 0.208,
             "openvla-7b": 0.10,
+            "openvla-1000-img-aug": 0.88,
+            "openvla-4000-img-aug": 0.88,
         },
         "stack_green_block_on_yellow_block": {
             "rt-1-x": 0.000,
             "octo-base": 0.292,
             "octo-small": 0.583,
             "openvla-7b": 0.10,
+            "openvla-1000-img-aug": 0.88,
+            "openvla-4000-img-aug": 0.88,
         },
         "put_eggplant_in_basket": {
             "rt-1-x": 0.000,
             "octo-base": 0.400,
             "octo-small": 0.600,
             "openvla-7b": 0.10,
+            "openvla-1000-img-aug": 0.88,
+            "openvla-4000-img-aug": 0.88,
         },
     }
     real_success_dict = {
@@ -889,6 +905,8 @@ def calc_bridge_put_on_env_stats(root_result_dir):
             "octo-base": 0.333,
             "octo-small": 0.417,
             "openvla-7b": 0.10,
+            "openvla-1000-img-aug": 0.88,
+            "openvla-4000-img-aug": 0.88,
         },
         "put_carrot_on_plate": {"rt-1-x": 0.00, "octo-base": 0.25, "octo-small": 0.083},
         "stack_green_block_on_yellow_block": {
@@ -896,12 +914,16 @@ def calc_bridge_put_on_env_stats(root_result_dir):
             "octo-base": 0.000,
             "octo-small": 0.125,
             "openvla-7b": 0.10,
+            "openvla-1000-img-aug": 0.88,
+            "openvla-4000-img-aug": 0.88,
         },
         "put_eggplant_in_basket": {
             "rt-1-x": 0.000,
             "octo-base": 0.250,
             "octo-small": 0.400,
             "openvla-7b": 0.10,
+            "openvla-1000-img-aug": 0.88,
+            "openvla-4000-img-aug": 0.88,
         },
     }
 
@@ -1038,6 +1060,8 @@ CKPT_MAPPING = {
     "octo-small": "octo-small",
     "octo-server": "octo-server",
     "openvla-7b": "openvla-7b",
+    "openvla-1000-img-aug": "openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--1000_chkpt",
+    "openvla-4000-img-aug": "openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--4000_chkpt",
 }
 
 parser = argparse.ArgumentParser()
