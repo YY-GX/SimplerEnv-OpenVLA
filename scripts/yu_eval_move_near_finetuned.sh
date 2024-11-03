@@ -8,17 +8,16 @@ policy_model="openvla" # Ensure you set this to the correct value
 
 
 
-gpu_id=7
-#ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--1000_chkpt"
-#ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3-v2/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--4000_chkpt"
-#ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3-v2/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--4000_chkpt"
-ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.1.2-bs64/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--100000_chkpt"
+gpu_id=3
+ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--1000_chkpt"
+ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3-v2/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--4000_chkpt"
+ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.0.3-v2/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--4000_chkpt"
 
 
 set_5=(
     "MoveNearGoogleBakedTexInScene-v0"
 )
-seeds=(0)
+seeds=(0 1 2 3 4)
 
 scene_name=google_pick_coke_can_1_v4
 for seed in "${seeds[@]}"; do
