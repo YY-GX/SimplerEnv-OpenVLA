@@ -12699,3 +12699,11 @@ Random seed set to 0 for all relevant libraries.
 [2024-11-03 22:26:02.749] [svulkan2] [warning] Continue without GLFW.
 [2024-11-03 22:28:41.469] [svulkan2] [error] GLFW error: X11: Failed to open display 
 [2024-11-03 22:28:41.469] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 22:31:17.300] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:31:17.300] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 22:33:52.588] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:33:52.588] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 22:36:28.811] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:36:28.811] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 22:38:44.413] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:38:44.413] [svulkan2] [warning] Continue without GLFW.

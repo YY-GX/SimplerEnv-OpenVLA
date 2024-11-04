@@ -1,0 +1,57 @@
+/mnt/bum/yufang/projects/openvla/runs/1.1.2/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--100000_chkpt
+2024-11-03 22:47:10.650200: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-11-03 22:47:10.650314: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-11-03 22:47:10.651236: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-11-03 22:47:10.657203: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-11-03 22:47:11.709939: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+Expected `transformers==4.40.1` and `tokenizers==0.19.1` but got `transformers==4.40.1` and `tokenizers==0.19.0`; there might be inference-time regressions due to dependency changes. If in doubt, pleaseuse the above versions.
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Octo is not correctly imported.
+No module named 'octo'
+**** openvla ****
+Random seed set to 0 for all relevant libraries.
+*** policy_setup: google_robot, unnorm_key: fractal20220817_data ***
+>> timm version: 0.9.10
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  3.09it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  3.53it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  3.70it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.74it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.65it/s]
+[2024-11-03 22:47:53.198] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:47:53.198] [svulkan2] [warning] Continue without GLFW.
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.is_final_subtask to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.is_final_subtask` for environment variables or `env.get_wrapper_attr('is_final_subtask')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.get_language_instruction to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.get_language_instruction` for environment variables or `env.get_wrapper_attr('get_language_instruction')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.robot_uid to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.robot_uid` for environment variables or `env.get_wrapper_attr('robot_uid')` that will search the reminding wrappers.[0m
+  logger.warn(
+[2024-11-03 22:48:56.303] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:48:56.303] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 22:49:58.149] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:49:58.149] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 22:50:59.003] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:50:59.003] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 22:51:56.907] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:51:56.907] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 22:52:55.141] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:52:55.141] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 22:53:55.021] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:53:55.021] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 22:54:58.169] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:54:58.169] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 22:56:54.827] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:56:54.827] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 22:59:26.742] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 22:59:26.743] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 23:01:22.607] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 23:01:22.607] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 23:02:58.136] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 23:02:58.136] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 23:05:34.716] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 23:05:34.716] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 23:08:17.491] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 23:08:17.491] [svulkan2] [warning] Continue without GLFW.
+[2024-11-03 23:11:10.470] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-03 23:11:10.470] [svulkan2] [warning] Continue without GLFW.
