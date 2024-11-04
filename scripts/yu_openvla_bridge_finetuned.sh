@@ -1,4 +1,4 @@
-gpu_id=4
+gpu_id=0
 policy_model=openvla
 #ckpt_path="openvla/openvla-7b"
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--1000_chkpt" "/mnt/bum/yufang/projects/openvla/runs/1.0.3-v2/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--4000_chkpt")
@@ -29,6 +29,14 @@ for seed in "${seeds[@]}"; do
       --rgb-overlay-path ${rgb_overlay_path} \
       --robot-init-x ${robot_init_x} ${robot_init_x} 1 --robot-init-y ${robot_init_y} ${robot_init_y} 1 --obj-variation-mode episode --obj-episode-range 0 24 \
       --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 --instruction "Pick up the carrot and place it on the plate" --seed "$seed";
+
+    CUDA_VISIBLE_DEVICES=${gpu_id} python simpler_env/main_inference.py --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
+      --robot ${robot} --policy-setup widowx_bridge \
+      --control-freq 5 --sim-freq 500 --max-episode-steps 100 \
+      --env-name PutSpoonOnTableClothInScene-v0 --scene-name ${scene_name} \
+      --rgb-overlay-path ${rgb_overlay_path} \
+      --robot-init-x ${robot_init_x} ${robot_init_x} 1 --robot-init-y ${robot_init_y} ${robot_init_y} 1 --obj-variation-mode episode --obj-episode-range 0 24 \
+      --robot-init-rot-quat-center 0 0 0 1 --robot-init-rot-rpy-range 0 0 1 0 0 1 0 0 1 --instruction "Pick up the spoon and place it on the towel" --seed "$seed";
   done
 done
 
