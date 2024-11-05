@@ -10,7 +10,8 @@ policy_model=openvla
 #All
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.2-bs64/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--100000_chkpt")
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.2/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--100000_chkpt")
-declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.0/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--5000_chkpt")
+#declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.0/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--5000_chkpt")
+declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.0/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--1000_chkpt")
 
 scene_name=bridge_table_1_v1
 robot=widowx
