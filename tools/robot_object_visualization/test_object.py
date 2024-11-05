@@ -35,17 +35,17 @@ def build_actor(
 
 
 def demo(model_dir):
-    # engine = sapien.Engine()
-    # renderer = sapien.SapienRenderer()
-    # engine.set_renderer(renderer)
-    #
-    # scene_config = sapien.SceneConfig()
-    # scene = engine.create_scene(scene_config)
-    # scene.set_timestep(1 / 500.0)
-    # scene.add_ground(0)
-    #
-    # scene.set_ambient_light([0.5, 0.5, 0.5])
-    # scene.add_directional_light([0, 1, -1], [0.5, 0.5, 0.5])
+    engine = sapien.Engine()
+    renderer = sapien.SapienRenderer()
+    engine.set_renderer(renderer)
+
+    scene_config = sapien.SceneConfig()
+    scene = engine.create_scene(scene_config)
+    scene.set_timestep(1 / 500.0)
+    scene.add_ground(0)
+
+    scene.set_ambient_light([0.5, 0.5, 0.5])
+    scene.add_directional_light([0, 1, -1], [0.5, 0.5, 0.5])
     #
     # viewer = Viewer(renderer)
     # viewer.set_scene(scene)
