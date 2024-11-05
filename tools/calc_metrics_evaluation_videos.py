@@ -651,7 +651,7 @@ def calc_drawer_stats(root_result_dir):
     print("*" * 20)
     for _ in range(3):
         print()
-        
+
         
 def calc_long_horizon_apple_in_drawer_stats(root_result_dir):
     print("***Drawer results***")

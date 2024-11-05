@@ -85,7 +85,7 @@ def main():
     parser.add_argument(
         "--model-dir",
         type=str,
-        default="ManiSkill2_real2sim/data/custom/models/opened_coke_can",
+        default="ManiSkill2_real2sim/data/custom/models/cup",
     )
     args = parser.parse_args()
 
