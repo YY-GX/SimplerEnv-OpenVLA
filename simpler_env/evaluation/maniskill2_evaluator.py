@@ -204,7 +204,7 @@ def run_maniskill2_eval_single_episode(
 
 
 
-
+    print(f"video_path: {video_path}")
     write_video(video_path, images, fps=5)
 
     # save action trajectory
