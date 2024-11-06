@@ -1,4 +1,4 @@
-gpu_id=5
+gpu_id=6
 policy_model=openvla
 #ckpt_path="openvla/openvla-7b"
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--1000_chkpt" "/mnt/bum/yufang/projects/openvla/runs/1.0.3-v2/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--4000_chkpt")
@@ -16,8 +16,8 @@ policy_model=openvla
 
 #Carrot
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.5-v2/carrot-1.1.5-v2-openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--1000_chkpt")
-declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.5-v2/carrot-1.1.5-v2-openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--3000_chkpt")
-#declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.5-v2/carrot-1.1.5-v2-openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--5000_chkpt")
+#declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.5-v2/carrot-1.1.5-v2-openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--3000_chkpt")
+declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.5-v2/carrot-1.1.5-v2-openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--5000_chkpt")
 
 scene_name=bridge_table_1_v1
 robot=widowx
