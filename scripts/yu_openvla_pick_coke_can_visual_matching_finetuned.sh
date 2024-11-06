@@ -1,13 +1,19 @@
 
 
-gpu_id=1
+gpu_id=4
 
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--1000_chkpt" "/mnt/bum/yufang/projects/openvla/runs/1.0.3-v2/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--4000_chkpt")
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.2-bs64/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--100000_chkpt")
-declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.2/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--100000_chkpt")
+#declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.2/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--100000_chkpt")
+# nov 6 - coke
+declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.8/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--1000_chkpt")
+#declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.8/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--3000_chkpt")
+#declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.8/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--10000_chkpt")
+
 
 # lr_switch=laying horizontally but flipped left-right to match real eval; upright=standing; laid_vertically=laying vertically
 declare -a coke_can_options_arr=("lr_switch=True" "upright=True" "laid_vertically=True")
+
 
 # URDF variations
 declare -a urdf_version_arr=(None "recolor_tabletop_visual_matching_1" "recolor_tabletop_visual_matching_2" "recolor_cabinet_visual_matching_1")
