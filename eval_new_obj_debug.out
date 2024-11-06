@@ -1,0 +1,42 @@
+2024-11-05 21:57:34.540244: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-11-05 21:57:34.540341: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-11-05 21:57:34.541300: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-11-05 21:57:34.557705: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-11-05 21:57:37.186525: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+Expected `transformers==4.40.1` and `tokenizers==0.19.1` but got `transformers==4.40.1` and `tokenizers==0.19.0`; there might be inference-time regressions due to dependency changes. If in doubt, pleaseuse the above versions.
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Octo is not correctly imported.
+No module named 'octo'
+**** openvla ****
+Random seed set to 0 for all relevant libraries.
+*** policy_setup: google_robot, unnorm_key: fractal20220817_data ***
+>> timm version: 0.9.10
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.05it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.15it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:02<00:00,  1.54it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:02<00:00,  1.39it/s]
+/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+>> Saved_model_path: openvla/openvla-7b
+Control mode:  arm_pd_ee_delta_pose_align_interpolate_by_planner_gripper_pd_joint_target_delta_pos_interpolate_by_planner
+Traceback (most recent call last):
+  File "/mnt/arc/yygx/pkgs_baselines/SimplerEnv-OpenVLA/simpler_env/main_inference.py", line 107, in <module>
+    success_arr = maniskill2_evaluator(model, args)
+  File "/mnt/arc/yygx/pkgs_baselines/SimplerEnv-OpenVLA/simpler_env/evaluation/maniskill2_evaluator.py", line 376, in maniskill2_evaluator
+    success_arr.append(run_maniskill2_eval_single_episode(obj_episode_id=obj_episode_id, **kwargs))
+  File "/mnt/arc/yygx/pkgs_baselines/SimplerEnv-OpenVLA/simpler_env/evaluation/maniskill2_evaluator.py", line 65, in run_maniskill2_eval_single_episode
+    env = build_maniskill2_env(
+  File "/mnt/arc/yygx/pkgs_baselines/SimplerEnv-OpenVLA/simpler_env/utils/env/env_builder.py", line 16, in build_maniskill2_env
+    env = gym.make(env_name, **kwargs)
+  File "/home/yygx/.local/lib/python3.10/site-packages/gymnasium/envs/registration.py", line 741, in make
+    env_spec = _find_spec(id)
+  File "/home/yygx/.local/lib/python3.10/site-packages/gymnasium/envs/registration.py", line 527, in _find_spec
+    _check_version_exists(ns, name, version)
+  File "/home/yygx/.local/lib/python3.10/site-packages/gymnasium/envs/registration.py", line 393, in _check_version_exists
+    _check_name_exists(ns, name)
+  File "/home/yygx/.local/lib/python3.10/site-packages/gymnasium/envs/registration.py", line 370, in _check_name_exists
+    raise error.NameNotFound(
+gymnasium.error.NameNotFound: Environment `GraspSingleCupInScene` doesn't exist. Did you mean: `GraspSingleCustomInScene`?
