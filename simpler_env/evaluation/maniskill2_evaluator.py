@@ -67,7 +67,6 @@ def run_maniskill2_eval_single_episode(
         **additional_env_build_kwargs,
         **kwargs,
     )
-    exit(0)
 
     # initialize environment
     env_reset_options = {
