@@ -5,7 +5,7 @@ import time
 import numpy as np
 import sapien.core as sapien
 from sapien.utils.viewer import Viewer
-
+import os
 
 def build_actor(
     model_dir: str,
