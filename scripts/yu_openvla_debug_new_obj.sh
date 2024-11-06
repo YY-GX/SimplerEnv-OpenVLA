@@ -1,7 +1,8 @@
 gpu_id=0
 policy_model=openvla
 
-declare -a arr=("openvla/openvla-7b")
+#declare -a arr=("openvla/openvla-7b")
+declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.2-bs64/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--15000_chkpt")
 
 scene_name=google_pick_coke_can_1_v4
 rgb_overlay_path=./ManiSkill2_real2sim/data/real_inpainting/google_coke_can_real_eval_1.png
