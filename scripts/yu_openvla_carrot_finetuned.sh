@@ -19,8 +19,15 @@ policy_model=openvla
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.5-v2/carrot-1.1.5-v2-openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--3000_chkpt")
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.5-v2/carrot-1.1.5-v2-openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--5000_chkpt")
 
-#RT-1 rollouts
-declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/rollout/openvla-7b+simpler_env+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--2000_chkpt")
+declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.5-rollout-0.1/carrot-1.1.5-rollout_0.1-openvla-7b+droid_rollout+b8+lr-0.0005+lora-r32+dropout-0.0--10000_chkpt")
+#declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.5-rollout-0.3/carrot-1.1.5-rollout_0.3-openvla-7b+droid_rollout+b8+lr-0.0005+lora-r32+dropout-0.0--10000_chkpt")
+#declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.5-rollout-0.5/carrot-1.1.5-rollout_0.5-openvla-7b+droid_rollout+b8+lr-0.0005+lora-r32+dropout-0.0--10000_chkpt")
+
+##RT-1 rollouts
+#declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/rollout/openvla-7b+simpler_env+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--2000_chkpt")
+
+
+
 
 scene_name=bridge_table_1_v1
 robot=widowx
