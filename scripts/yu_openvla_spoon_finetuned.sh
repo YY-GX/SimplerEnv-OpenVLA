@@ -1,4 +1,4 @@
-gpu_id=7
+gpu_id=0
 policy_model=openvla
 #ckpt_path="openvla/openvla-7b"
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.0.3/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--image_aug--1000_chkpt" "/mnt/bum/yufang/projects/openvla/runs/1.0.3-v2/openvla-7b+droid+b8+lr-0.0001+lora-r32+dropout-0.0--4000_chkpt")
@@ -10,7 +10,9 @@ policy_model=openvla
 
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.2-bs64/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--100000_chkpt")
 #declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/1.1.2/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--100000_chkpt")
-declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/rollout/openvla-7b+simpler_env+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--2000_chkpt")
+#RT-1 rollouts
+#declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/rollout/openvla-7b+simpler_env+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--2000_chkpt")
+declare -a arr=("/mnt/bum/yufang/projects/openvla/runs/rollout-noaug/openvla-7b+simpler_env+b8+lr-0.0005+lora-r32+dropout-0.0--1000_chkpt")
 
 scene_name=bridge_table_1_v1
 robot=widowx
