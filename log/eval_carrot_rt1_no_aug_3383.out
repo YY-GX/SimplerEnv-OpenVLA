@@ -1,0 +1,24 @@
+2024-11-07 14:19:40.621203: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-11-07 14:19:40.621329: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-11-07 14:19:40.622545: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-11-07 14:19:40.627993: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-11-07 14:19:41.245005: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Traceback (most recent call last):
+  File "/playpen-storage/yygx/pkgs_baselines/SimplerEnv-OpenVLA/simpler_env/main_inference.py", line 6, in <module>
+    from simpler_env.evaluation.argparse import get_args
+  File "/mnt/arc/yygx/pkgs_baselines/SimplerEnv-OpenVLA/simpler_env/__init__.py", line 2, in <module>
+    import mani_skill2_real2sim.envs
+  File "/mnt/arc/yygx/pkgs_baselines/SimplerEnv-OpenVLA/ManiSkill2_real2sim/mani_skill2_real2sim/envs/__init__.py", line 1, in <module>
+    from .custom_scenes import *
+  File "/mnt/arc/yygx/pkgs_baselines/SimplerEnv-OpenVLA/ManiSkill2_real2sim/mani_skill2_real2sim/envs/custom_scenes/__init__.py", line 1, in <module>
+    from . import grasp_single_in_scene
+  File "/mnt/arc/yygx/pkgs_baselines/SimplerEnv-OpenVLA/ManiSkill2_real2sim/mani_skill2_real2sim/envs/custom_scenes/grasp_single_in_scene.py", line 5, in <module>
+    import sapien.core as sapien
+  File "/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/sapien/__init__.py", line 9, in <module>
+    from sapien import core, sensor, asset, example, utils
+  File "/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/sapien/utils/__init__.py", line 1, in <module>
+    from .viewer import Viewer
+  File "/mnt/arc/yygx/.conda/envs/openvla/lib/python3.10/site-packages/sapien/utils/viewer.py", line 18, in <module>
+    from transforms3d.quaternions import axangle2quat as aa
+ModuleNotFoundError: No module named 'transforms3d'
