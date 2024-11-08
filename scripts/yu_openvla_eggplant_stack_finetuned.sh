@@ -1,8 +1,11 @@
-gpu_id=1
+gpu_id=7
 policy_model=openvla
 #ckpt_path="openvla/openvla-7b"
 #ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.1.2-bs64/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--100000_chkpt"
 ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.1.2/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--image_aug--100000_chkpt"
+
+#RT-1 rollouts
+ckpt_path="/mnt/bum/yufang/projects/openvla/runs/rollout-noaug/openvla-7b+simpler_env+b8+lr-0.0005+lora-r32+dropout-0.0--1000_chkpt"
 
 #yy: Stack Cube
 scene_name=bridge_table_1_v1
@@ -27,7 +30,7 @@ rgb_overlay_path=ManiSkill2_real2sim/data/real_inpainting/bridge_sink.png
 robot_init_x=0.127
 robot_init_y=0.06
 
-python simpler_env/main_inference.py --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
+CUDA_VISIBLE_DEVICES=${gpu_id} python simpler_env/main_inference.py --policy-model ${policy_model} --ckpt-path ${ckpt_path} \
   --robot ${robot} --policy-setup widowx_bridge \
   --control-freq 5 --sim-freq 500 --max-episode-steps 120 \
   --env-name PutEggplantInBasketScene-v0 --scene-name ${scene_name} \
