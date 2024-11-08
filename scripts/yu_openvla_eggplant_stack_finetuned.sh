@@ -1,4 +1,4 @@
-gpu_id=7
+gpu_id=6
 policy_model=openvla
 #ckpt_path="openvla/openvla-7b"
 #ckpt_path="/mnt/bum/yufang/projects/openvla/runs/1.1.2-bs64/openvla-7b+droid+b8+lr-0.0005+lora-r32+dropout-0.0--100000_chkpt"
