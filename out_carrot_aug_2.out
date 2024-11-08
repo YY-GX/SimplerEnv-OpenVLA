@@ -1,0 +1,57 @@
+2024-11-07 19:42:15.599930: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-11-07 19:42:15.600021: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-11-07 19:42:15.601204: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-11-07 19:42:15.607837: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-11-07 19:42:17.196985: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+Expected `transformers==4.40.1` and `tokenizers==0.19.1` but got `transformers==4.40.1` and `tokenizers==0.19.0`; there might be inference-time regressions due to dependency changes. If in doubt, pleaseuse the above versions.
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+Octo is not correctly imported.
+No module named 'octo'
+**** openvla ****
+Random seed set to 0 for all relevant libraries.
+*** policy_setup: widowx_bridge, unnorm_key: bridge_orig ***
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:01,  2.07it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  2.64it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:01<00:00,  2.93it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.30it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.01it/s]
+[2024-11-07 19:43:55.781] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 19:43:55.781] [svulkan2] [warning] Continue without GLFW.
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.is_final_subtask to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.is_final_subtask` for environment variables or `env.get_wrapper_attr('is_final_subtask')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/yygx/.local/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.robot_uid to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.robot_uid` for environment variables or `env.get_wrapper_attr('robot_uid')` that will search the reminding wrappers.[0m
+  logger.warn(
+[2024-11-07 19:46:04.919] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 19:46:04.919] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 19:48:13.838] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 19:48:13.838] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 19:50:18.579] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 19:50:18.579] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 19:52:44.264] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 19:52:44.264] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 19:54:52.940] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 19:54:52.940] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 19:57:23.644] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 19:57:23.644] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 19:59:56.886] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 19:59:56.886] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 20:01:54.677] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 20:01:54.677] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 20:04:07.212] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 20:04:07.212] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 20:06:11.363] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 20:06:11.363] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 20:08:25.262] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 20:08:25.262] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 20:10:57.044] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 20:10:57.044] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 20:13:21.713] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 20:13:21.713] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 20:15:49.282] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 20:15:49.282] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 20:18:16.040] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 20:18:16.040] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 20:20:43.296] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 20:20:43.296] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 20:23:00.756] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 20:23:00.756] [svulkan2] [warning] Continue without GLFW.
+[2024-11-07 20:25:20.868] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2024-11-07 20:25:20.868] [svulkan2] [warning] Continue without GLFW.
